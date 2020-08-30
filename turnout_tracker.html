@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ryan Hartanto</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="subpage_style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Montserrat|Montserrat:b|Roboto">
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    
+  </head>
+  
+  <div class="navbar-container">
+    <nav class="navbar navbar-expand-sm navbar-light" style="font-family:'Gotham'; padding-left:0!important;">
+      <a href="index.html" style="font-size:20px;"  id="secondary-color"><strong>RYAN HARTANTO</strong></a>
+      <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarMenu">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">Work</a>
+          </li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link">About</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <body>
+    <div class="page-container">
+      <div>
+        <div class="sub-page-header", style="font-size: 50px;">
+            Turnout Tracker
+        </div>
+        <div class = "sub-page-text" style="text-align:center;">
+          Tracking attendance made easier.
+        </div>
+        <br>
+        <img src="images/turnouttracker/screens.png" style="width: 100%;"></img>
+
+        <div class="section-divider"></div>
+        <div class="section-container">
+          <div class = "sub-page-text">
+          <strong>Role</strong>: UI/UX Designer<br>
+          <strong>Partner</strong>: <a href="https://www.linkedin.com/in/stephen-boussarov/" target="_blank" style="font-family: Roboto;">Stephen Boussarov</a> (Programmer)<br>
+          <strong>Duration</strong>: July 2020, 3 weeks
+          </div>
+        </div>
+
+        <div class="section-divider"></div>
+        <div class="section-container">
+          <div class="sub-page-header", style="text-align: left;">
+              Overview 📗
+          </div>
+          <div class = "sub-page-text">
+            <br>Turnout Tracker is a mobile application that can be used to track attendance during meetings. In addition, the app allows a user to view attendance statistics with ease, such as: who attended an event, who was absent, the percentage of events a person has attended, and more. I was responsible for research and design for the application. Stephen worked as a developer and programmed the application with Swift for iOS. We worked closely with each other throughout the development process to finalize decisions for the application.
+          </div>
+        </div>
+
+        <div class="section-divider"></div>
+        <div class="section-container">
+          <div class="sub-page-header", style="text-align: left;">
+              Problem 💢
+          </div>
+          <div class = "sub-page-text">
+            <br>Through our experiences in school and club activities, we realized that many users do not have an efficient method of keeping track of attendance for their meetings and events. The process of keeping attendance for recurring meetings, and recording the data from attendance to generate statistics, was repetitive, tedious, and unreliable.
+          </div>
+        </div>
+
+        <div class="section-divider"></div>
+        <div class="section-container">
+          <div class="sub-page-header", style="text-align: left;">
+              Research 🔍
+          </div>
+          <div class = "sub-page-text">
+            <strong><br>Interviews:<br></strong>
+            In order to gather qualitative data for the application, I conducted user interviews. I reached out to people who I knew that had experience with keeping track of attendance and scheduled virtual interviews with them. I wanted to gather insight on what people use for tracking attendance, their reasons for doing so, and their opinions on the attendance tracking process.<br><br>
+            🙂 User Interview 1: <br>
+            <ul>
+              <li>Took attendance for in-person events for a school volunteer club.</li>
+              <li>Would take attendance by passing around a piece of paper to attendees, and have them write their name.</li>
+              <li>After the event, somebody would have to input information from the attendance sheet into an Excel sheet on their computer. This required that they find and read every single name listed on the paper, and then input it into Excel.</li>
+            </ul>
+
+            🙂 User Interview 2: <br>
+            <ul>
+              <li>Takes attendance as an instructor for online courses. Keeps track of who shows up to Zoom meetings.</li>
+              <li>There is an automated record of who shows up on the call, but it is very inaccurate. Sometimes the instructor doesn’t show up in the record, and some people who didn’t attend somehow show up in the record.</li>
+              <li>The user texts the names of students who do not show up in their work chat. Wants to follow up on students and their parents if the student doesn’t show up to classes.</li>
+            </ul>
+
+            🙂 User Interview 3: <br>
+            <ul>
+              <li>Took attendance for fraternity meetings.</li>
+              <li>While at an event, the user types the names of people that are there using a writing app on their phone.</li>
+              <li>Takes into account who has arrived, but not who is expected to arrive and has not yet. The user is forced to use deduction to figure out who isn't at an event.</li>
+              <li>The user used their phone because of the convenience: no need to prepare anything beforehand, they only need their phone.</li>
+              <li>After the event, goes to their computer to record all the names into an excel sheet.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="section-divider"></div>
+        <div class="section-container">
+          <div class="sub-page-header", style="text-align: left;">
+              Synthesis ⚖️
+          </div>
+          <div class = "sub-page-text">
+            <br>The process of routinely keeping attendance is a repetitive and tedious process. It often requires users to transfer information between different mediums (paper, phone, computer). As a result, this becomes unnecessarily time-consuming, and potentially unreliable.<br><br>
+            The app must reduce the repetition of the attendance-keeping process, and not force the user to repeat the same actions if they have recurring events. Therefore, it should allow the user to re-use a list of attendees so that they do not have to copy every attendee's name for every event.<br><br>
+            The process of calculating statistics from attendance should be automated. Such statistics include: how many events an attendee has gone to or missed and the percentage of event attendance per event.
+          </div>
+        </div>
+
+        <div class="section-divider"></div>
+        <div class="section-container">
+          <div class="sub-page-header", style="text-align: left;">
+              Strategizing 📋
+          </div>
+          <div class = "sub-page-text">
+            <br><strong>Use Cases:</strong>
+            <br>“Everybody just showed up to today’s event, and I need to take attendance”<br>
+            “My club is going to have recurring meetings, so I need to keep track of attendance weekly”<br>
+            “I want to see how many people were expected to show up today, but didn’t”<br>
+            “The club secretary needs a list of people who didn’t show up to the meeting”<br>
+            “I want to check how our club’s attendance was this year”<br><br>
+
+            <br><strong>Storyboarding:</strong><br><br>
+            <img src="images/turnouttracker/storyboards.png" style="width: 100%;"><br><br>
+
+            <br><strong>User Flow:</strong><br><br>
+            <img src="images/turnouttracker/user_flow.png" style="width: 100%;"><br><br>
+          </div>
+        </div>
+
+        
+        <div class="section-divider"></div>
+        <div class="section-container">
+          <div class="sub-page-header", style="text-align: left;">
+              Sketching 📃
+          </div>
+          <br><img src="images/turnouttracker/sketching.png" style="width: 100%;">
+        </div>
+
+        <div class="section-divider"></div>
+        <div class="section-container">
+          <div class="sub-page-header", style="text-align: left;">
+              Wireframing 💻
+          </div>
+          <br><img src="images/turnouttracker/wireframing.png" style="width: 100%;">
+        </div>
+
+        <div class="section-divider"></div>
+        <div class="section-container">
+          <div class="sub-page-header", style="text-align: left;">
+              Design and Prototype 💡
+          </div>
+
+          
+          
+          <div class = "sub-page-text">
+            <br><strong>Interactive Prototype:</strong>
+            <br><iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width = "100%" height="500" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FCX4UXTH3EL6dNTYBohhvmJ%2FTurnout-Tracker-Prototype%3Fnode-id%3D162%253A87%26scaling%3Dcontain&chrome=DOCUMENTATION" allowfullscreen></iframe><br>
+
+            <br>Turnout Tracker uses a system of Groups, Lists, and Events to make taking attendance an intuitive and convenient process. All designs were created with Figma.<br><br>
+            <br><strong>Groups:</strong>
+            <br>A group can represent an organization, club, or team. Groups are separate entities, and each contain their own Home, Events, and Lists.<br>
+
+            <br><br><strong>Home:</strong>
+            <br>The home page of a group contains cumulative data for all attendees involved in a group. When tapping on an attendee, a user can view data about what events they have attended/missed.<br><br>
+            <img src="images/turnouttracker/groups_home.png" style="width: 100%;"><br>
+
+            <br><br><strong>Events:</strong>
+            <br>A user can create an event to keep track of attendance. The user simply has to check off an attendee's name to mark them as "attended". In addition, a user can copy a list of people who have attended or are absent with the press of a button.<br><br>
+            <img src="images/turnouttracker/events.png" style="width: 100%;"><br>
+
+            <br><br><strong>Lists:</strong>
+            <br>The purpose of lists are to make the attendance tracking process more convenient. Instead of having to re-type attendee names for recurring events, a user is able to re-use a list of names.<br><br>
+            <img src="images/turnouttracker/lists.png" style="width: 100%;"><br>
+          </div>
+        </div>
+
+        <div class="section-divider"></div>
+        <div class="section-container">
+          <div class="sub-page-header", style="text-align: left;">
+              Retrospect 🤔
+          </div>
+          <div class = "sub-page-text">
+            <br><strong>What I learned:</strong><br><br>
+            <strong>The value of user perspectives:</strong> This is the first time that I have reached out to others for user interviews. This experience has helped me understand the importance of qualitative data for research. Learning about users and their pain points when tracking attendance was extremely valuable, and contributed to the creation of certain features on Turnout Tracker.<br><br>
+
+            <strong>Constraints by design:</strong>  Turnout Tracker was programmed with Swift, a programming language specifically designed for Apple devices. This language has its own set of tools called SwiftUI, which standardize the user interface of all iOS applications. As a result, there are limitations to how applications with SwiftUI can be designed. I had to learn how to understand the developer’s perspective when designing, and make sure that my designs could be recreated using Swift.<br><br>
+
+            <strong>Communication is key:</strong>  My partner and I frequently made calls in order to strategize certain decisions for the application. Frequent communication made the design process more efficient, as I could get an immediate discussion about key design decisions for the application.<br><br>
+
+            <br><strong>What I can do next time:</strong><br><br>
+            <strong>Interviewing:</strong> For this project, I independently reached out to people to conduct 1-on-1 interviews. However, I realized that I was taking notes during the interview, which could be detrimental. In the future, I should either have another person with me to take notes during the interview, or record the interview and take notes after it is finished. This way, the interview is not disrupted and the interviewee will feel more comfortable.<br><br>
+
+            <strong>User Testing:</strong> User testing during the design process could help discover problems with my design. It is always important to get more user perspectives when designing. In the future, I hope to incorporate user testing and rapid prototyping in my design process.
+          </div>
+        </div>
+
+
+        
+
+ 
+
+      </div>
+    </div>
+
+
+
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+</html>
