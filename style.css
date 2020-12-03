@@ -59,9 +59,6 @@ a {
   transition: all 0.5s;
 }
 
-/*.ryan-image:hover{
-  transform: scale(1.05);
-}*/
 
 /* home page */
 .home-header {
@@ -114,7 +111,7 @@ a {
 
 .card-description {
   font-family: 'Roboto';
-  font-size: 14px;
+  font-size: 16px;
   align-self: start;
   color: #6e6e6e;
 }
