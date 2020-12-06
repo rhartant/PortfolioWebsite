@@ -1,6 +1,3 @@
-/*June 2020*/
-
-
 #secondary-color{
   color: #278ee3 !important;
 }
@@ -17,7 +14,7 @@
 }
 
 * {
-  font-family: 'Montserrat';
+  font-family: 'Poppins';
 }
 a {
     text-decoration: none !important;
@@ -38,13 +35,13 @@ a {
 /* about page */
 .about-container {
   display: grid;
-  grid-template-columns: auto 350px;
+  grid-template-columns: 350px auto;
   grid-column-gap: 20px;
 }
 
 .about-header {
   font-size: 20px;
-  color: black;
+  color: #212121;
   align-self: center;
   padding-top: 20px;
 
@@ -62,6 +59,7 @@ a {
 
 /* home page */
 .home-header {
+  color: #212121;
   font-size: 26px !important;
   padding-bottom: 30px;
   animation: fadeInAnimation 1s; 
@@ -80,7 +78,7 @@ a {
 
 .card-container {
   display: grid;
-  grid-template-columns: 250px auto;
+  grid-template-columns: 300px auto;
   grid-column-gap: 20px;
   color: #2a2c38;
   /*opacity:0.75;*/
@@ -97,36 +95,33 @@ a {
 
 .card-image {
   justify-self: begin;
-  width: 250px;
+  width: 300px;
   border-radius: 5px;
   background-color: #278ee3;
 }
 
 .card-title {
-  font-size: 24px;
+  font-size: 26px;
   font-weight: bold;
-  color: black;
+  color: #212121;
   padding-top: 10px;
 }
 
 .card-description {
-  font-family: 'Roboto';
   font-size: 16px;
   align-self: start;
-  color: #6e6e6e;
+  color: #5c5c5c;
 }
 
 .card-button {
   background-color:#278ee3; 
   border: 2px solid #278ee3;
-  font-family: 'Montserrat';
   color: white;
-  font-weight: bold;
   border-radius: 5px;
   padding: 10px 15px;
   text-align: center;
   display: inline-block;
-  font-size: 14px;
+  font-size: 16px;
   transition-duration: 0.25s;
   justify-self: center;
   text-decoration: none !important;
@@ -190,7 +185,6 @@ a {
   }
 
   .card-image{
-    max-width: 300px;
     width: 100%;
   }
 

@@ -1,16 +1,16 @@
-ul li { font-family: Roboto }
+* {
+  font-family: 'Poppins';
+}
 
 .sub-page-header {
   font-size: 30px;
   text-align: center;
   font-weight: bold;
-  font-family: Montserrat;
 }
 
 .sub-page-text {
   font-size: 18px;
-  font-family: Roboto !important;
-  color: #6e6e6e;
+  color: #5c5c5c;
 }
 
 .section-divider {
