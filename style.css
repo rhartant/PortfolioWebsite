@@ -190,6 +190,8 @@ a {
 
   .home-header {
       font-size: 16px !important;
+ 
+      background-size: cover;
   }
 
   .home-header-big-text {
