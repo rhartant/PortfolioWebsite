@@ -87,6 +87,11 @@ a {
   
 }
 
+.home-header-big-text {
+  font-size: 64px; 
+  margin-bottom: 12px;
+}
+
 
 .cards-container {
   display: grid;
@@ -182,6 +187,14 @@ a {
 }
 
 @media (max-width: 800px) {
+
+  .home-header {
+      font-size: 16px !important;
+  }
+
+  .home-header-big-text {
+      font-size: 32px;
+  }
 
   .page-container {
     margin-left: 5%;
