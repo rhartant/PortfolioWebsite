@@ -8,14 +8,20 @@
 
 .navbar-container {
   font-size: 16px;
-  padding-bottom: 120px;
-  padding-left: 15%;
-  padding-right: 15%;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-bottom: 120px;
+}
+
+
+img {
+  border-radius: 5px;
 }
 
 * {
   font-family: 'Poppins';
 }
+
 a {
     text-decoration: none !important;
 }
@@ -23,8 +29,8 @@ a {
 .page-container {
   display: grid;
   grid-row-gap: 120px;
-  padding-left: 15%;
-  padding-right: 15%;
+  margin-left: 15%;
+  margin-right: 15%;
   padding-bottom: 150px;
 
   animation: fadeInAnimation 1s; 
@@ -58,29 +64,43 @@ a {
 
 
 /* home page */
+
 .home-header {
   color: #212121;
-  font-size: 26px !important;
-  padding-bottom: 30px;
+  font-size: 24px !important;
+  padding-top: 80px;
+  padding-bottom: 200px;
+  text-align: center;
   animation: fadeInAnimation 1s; 
   animation-iteration-count: 1; 
   animation-fill-mode: forwards; 
+
+  background-image: url("images/white_spheres.png");
+  background-color: white;
+
+
+  background-size: contain;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  
 }
+
 
 .cards-container {
   display: grid;
   grid-row-gap: 40px;
-
-  animation: fadeInAnimation 1s; 
+  color: #212121;
+  /*animation: fadeInAnimation 1s; 
   animation-iteration-count: 1; 
-  animation-fill-mode: forwards; 
+  animation-fill-mode: forwards; */
 }
 
 .card-container {
   display: grid;
   grid-template-columns: 300px auto;
   grid-column-gap: 20px;
-  color: #2a2c38;
   /*opacity:0.75;*/
   transition: 0.25s;
 }
@@ -101,16 +121,14 @@ a {
 }
 
 .card-title {
-  font-size: 26px;
+  font-size: 24px;
   font-weight: bold;
-  color: #212121;
   padding-top: 10px;
 }
 
 .card-description {
   font-size: 16px;
   align-self: start;
-  color: #5c5c5c;
 }
 
 .card-button {
@@ -129,7 +147,7 @@ a {
 
 .card-button:hover {
   background-color: white!important;
-  color: black;
+  color: #278ee3;
 }
 
 
@@ -166,13 +184,13 @@ a {
 @media (max-width: 800px) {
 
   .page-container {
-    padding-left: 5%;
-    padding-right: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
   }
 
   .navbar-container {
-    padding-left: 5%;
-    padding-right: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
   }
 
   .cards-container{
