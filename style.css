@@ -102,8 +102,7 @@ a {
 .card-container {
   max-width: 1000px;
   margin: 0 auto;
-
-  border-radius: 10x;
+  border-radius: 10px;
   text-align: left;
   display: grid;
   grid-template-columns: 500px auto;
