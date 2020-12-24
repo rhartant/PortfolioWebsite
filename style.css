@@ -47,7 +47,7 @@ a {
 
 .about-header {
   font-size: 20px;
-  color: #3b3b3b;
+  color: #303030;
   align-self: center;
   padding-top: 24px;
 
@@ -66,7 +66,7 @@ a {
 /* home page */
 
 .home-header {
-  color: #3b3b3b;
+  color:#303030;
   font-size: 24px !important;
   padding-top: 80px;
   padding-bottom: 200px;
@@ -95,7 +95,7 @@ a {
 .cards-container {
   display: grid;
   grid-row-gap: 64px;
-  color: #3b3b3b;
+  color: #303030;
   text-align: center;
 }
 
@@ -160,7 +160,7 @@ a {
 
 .card-button:hover {
   background-color: white!important;
-  color: #3b3b3b;
+  color: #303030;
 }
 
 
