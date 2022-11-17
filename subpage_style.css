@@ -64,4 +64,9 @@
   margin-left: 0;
   margin-right: 0;
 }
+
+  .figma-iframe {
+    display:none;
+    visibility:hidden;
+  }
 }
