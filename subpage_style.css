@@ -2,25 +2,62 @@
   font-family: 'Poppins';
 }
 
+h1 {
+  font-size: 48px !important;
+  text-align: center;
+  font-weight: bold !important;
+  color: #303030 !important;
+  font-family: 'Poppins' !important;
+}
+
+h2 {
+  font-size: 36px;
+  text-align: center;
+  font-weight: bold !important;
+  color: #303030 !important;
+  text-align: left;
+}
+
+p {
+  font-size: 18px;
+  color: #303030;
+}
+
+ul{
+  font-size: 18px;
+  color: #303030;
+}
+
+/*delete maybe-----*/
 .sub-page-header {
   font-size: 30px;
   text-align: center;
   font-weight: bold;
-  color: #303030
+  color: #303030;
 }
 
 .sub-page-text {
   font-size: 18px;
   color: #5c5c5c;
 }
+/*delete maybe-----*/
 
 .section-divider {
   padding-top: 160px;
 }
 
+.header-container {
+  padding-left: 15%;
+  padding-right: 15%;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
 .section-container {
-  margin-left: 15%;
-  margin-right: 15%;
+  padding-left: 25%;
+  padding-right: 25%;
+  padding-top: 80px;
+  padding-bottom: 80px;
 }
 
 
@@ -60,9 +97,14 @@
     max-width: 100%;
   }
 
+  .header-container {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
   .section-container {
-  margin-left: 0;
-  margin-right: 0;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
   .figma-iframe {

@@ -7,10 +7,9 @@
 }
 
 .navbar-container {
-  font-size: 16px;
-  margin-left: 15%;
-  margin-right: 15%;
-  margin-bottom: 120px;
+  font-size: 18px !important;
+  padding-left: 15%;
+  padding-right: 15%;
 }
 
 
@@ -25,14 +24,17 @@ img {
 
 .page-container {
   display: grid;
-  grid-row-gap: 120px;
+  
+  /*grid-row-gap: 120px;
   padding-bottom: 150px;
+  margin-left: 15%;
+  margin-right: 15%;
+  */
 
   animation: fadeInAnimation 1s; 
   animation-iteration-count: 1; 
   animation-fill-mode: forwards; 
-  margin-left: 15%;
-  margin-right: 15%;
+  
 }
 
 a {
@@ -237,10 +239,10 @@ a {
     margin-left: 5%;
     margin-right: 5%;
   }
-f
+
   .navbar-container {
-    margin-left: 5%;
-    margin-right: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
   }
 
 
