@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ryan Hartanto</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="subpage_style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Poppins|Poppins:b|Roboto">
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    
+  </head>
+  
+  <div class="navbar-container">
+    <nav class="navbar navbar-expand-sm navbar-light bg-transparent">
+
+      <a class="navbar-brand" href="index.html">
+        <img src="images/brand_icon.png" width="50" height="25" alt="">
+      </a>
+
+      <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarMenu">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">Work</a>
+          </li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link">About</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <body>
+        <div class="header-container">
+          <h1>
+              AMS Finance Dashboard
+          </h1>
+
+          <br>
+          <img src="images/duo/duo_help_desk_headerpic.png" style="width: 100%;"></img>
+        </div>
+
+
+
+
+        <div class="section-container">
+          <h2>What's AMS? 📘</h2>
+          <p>
+            <br>
+            The Asset Management System (AMS) is a web application for managing IT assets (laptops, smartphones, etc.) and software licenses. Each asset in the system has data associated with it, such as purchase date, end-of-life/expiration date, cost, current employee it belongs to, and more. Assets and software licenses in AMS are searchable, sortable, and filterable. However, there wasn’t any way to conveniently view data related to groups of assets.
+
+            <br><br>
+            <img src="images/sces/ams/ams_list_of_assets.png" style="width: 100%;">
+          </p>
+        </div>
+
+
+        <div class="section-container">
+          <h2>Project Overview 📘</h2>
+          <p>
+            <br>
+            The finance department at the Student Center needs an easier way to do budgeting for IT assets instead of manually doing so on Excel. They also need to see a general overview of assets to make managing them easier. Since AMS keeps an active database of IT assets, it can be leveraged to suit their needs. To meet the finance team’s needs, I designed a dashboard with an overview of a fiscal year’s IT budget, statuses for different categories of assets, and upcoming asset expirations.
+          </p>
+        </div>
+
+        <div class="section-container">
+          <h2>
+            Defining Design Requirements with Stakeholders 💢
+          </h2>
+          <p><br>
+            I led multiple stakeholder meetings with the finance manager and other members of the finance team to discover what they needed from AMS in order to help them with budgeting. After learning about their needs, I designed a finance dashboard for AMS and iterated on the design based on feedback. For example, the Assets Status section of the dashboard went through some iterations. 
+
+          </p>
+        </div>
+
+        <div class="section-container">
+            <h2>Collaborating with Developers 📘</h2>
+            <p>
+              <br>
+              AMS was built using Snipe-IT, an open source software. This allowed developers to quickly create AMS without starting from scratch. Rather than create an entirely new design system to implement for the finance dashboard and every other page, I opted to remain consistent with the styling from Snipe-IT. I used components from the styling of Snipe-IT to minimize developer work and production time while still maintaining high quality UI/UX. The outlier to Snipe-IT’s UI were some custom graphs that I wanted to have for data visualization. After meeting with developers, it was decided that the dashboard would use graphs from Chart.js, an open-source Javascript library for data visualization. When making each of these graphs, I made sure with the development team that they were possible to implement given the data being collected for each asset.
+            </p>
+        </div>
+  
+
+        
+        <div class="section-container">
+          <h2>
+              Design 💻
+          </h2>
+   
+          <br>
+
+          <p>
+           
+            <img src="images/sces/ams/ams_dashboard_web.png" style="width: 100%;">
+            <br><br>
+          
+
+            <strong>Fiscal Year Budget Overview Section:</strong><br>
+            This section provides a budget overview of IT spending for a given fiscal year (July 1 - June 30). When a user clicks on a section of the bar chart or the name of the section, it will reveal a new page with a list of the selected assets. For example, clicking on the Laptops section of the bar chart would reveal a list of Laptops purchased during that fiscal year.
+
+            <br><br>
+
+            <strong>Assets Status Section:</strong><br>
+            Laptops, mobile phones, monitors, and desktops were selected as the most important assets to keep track of by the finance team. However, in the event that asset prioritization changes, there is a drop-down list that can change which asset statuses are displayed.
+
+            
+            <br><br>
+            <strong>Assets End of Life and Software License Expiration Sections:            </strong><br>
+            This section shows which assets or licenses are reaching or have reached their expiration date. This data would allow the finance team to ensure that assets and licenses are kept up-to-date.
+
+          </p>
+          </p>
+        </div>
+
+      
+
+
+        
+
+
+
+
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+</html>
