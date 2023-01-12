@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ryan Hartanto</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="subpage_style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Poppins|Poppins:b|Roboto">
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    
+  </head>
+  
+  <div class="navbar-container">
+    <nav class="navbar navbar-expand-sm navbar-light bg-transparent">
+
+      <a class="navbar-brand" href="index.html">
+        <img src="images/brand_icon.png" width="50" height="25" alt="">
+      </a>
+
+      <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarMenu">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">Work</a>
+          </li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link">About</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <body>
+        <div class="header-container">
+          <h1>
+              Level Up Separations
+          </h1>
+          <!--
+          <br>
+          <img src="images/duo/duo_help_desk_headerpic.png" style="width: 100%;"></img>
+        </div>-->
+
+
+
+
+        <div class="section-container">
+          <h2>Project Overview 📘</h2>
+          <p>
+            <br>
+            Level Up is an internal tool where UC Irvine Student Center Supervisors can manage student employees and track their training activities. The Student Center has over 100 student employees spanning across multiple departments that cycle. The process of separating an employee from Level Up was burdensome and time-consuming. I created a new user flow that allows department supervisors to formally separate students more efficiently.
+          </p>
+        </div>
+
+
+
+        <div class="section-container">
+          <h2>
+            Problem 💢
+          </h2>
+          <p><br>
+            When an employee resigns, their supervisor has to manually copy details from the student's resignation letter into an email template, including their separation date and reason for resignation. Then, HR has to remove the student from Level Up and manually re-enter those resignation details. Human Resources is the only department that can separate employees in Level Up. However, they think that supervisors should have the authority to separate their own students from their departments.
+          
+            <br><br>
+            <img src="images/sces/level_up_separations/separations_old_user_flow.png" style="width: 100%;">
+        
+        </p>
+        </div>
+
+        <div class="section-container">
+            <h2>Solution 💡</h2>
+            <p>
+              <br>
+              If the separation process is initiated in Level Up rather than an external method (email), then the resignation details will be kept in Level Up and wouldn't require re-entry. High fidelity mockups of a new user flow were created in Figma and shared in stakeholder meetings with HR and supervisors. These were iterated upon until approved for development.            </p>
+        </div>
+  
+
+        
+        <div class="section-container">
+          <h2>
+              Design 💻
+          </h2>
+   
+          <br>
+
+          <p>
+
+
+            <strong>Employee Resigns on Level Up</strong><br>
+            If a student needs to resign, this process isn't initiated via email anymore. Instead, they do so on level up so that their details are recorded on the system.
+            <br><br>
+            Separation Request Modal (Unfilled)
+            <img src="images/sces/level_up_separations/submit_resignation.png" style="width: 100%;">
+            <br><br>
+            Separation Request Modal (Filled)
+            <img src="images/sces/level_up_separations/submit_resignation_filled.png" style="width: 100%;">
+            <br><br>
+
+            <strong>Supervisor Confirms Separation</strong><br>
+            The employee's supervisor would get an email with a link directly to their profile and a prompt to confirm the separation. Details are already listed and don't require manual re-entry, all that's needed is a click for approval on the Level Up system itself.
+            <br><br>
+            <img src="images/sces/level_up_separations/separate_employee.png" style="width: 100%;">
+            <br><br>
+            For a scenario where an employee needs to be terminated without their resignation, the supervisor would go to that employee's profile, and then initiate the separation themselves.
+            <br><br>
+            <img src="images/sces/level_up_separations/edit_profile_separate.png" style="width: 100%;">
+            <br><br>
+            <img src="images/sces/level_up_separations/separate_employee_no_resignation.png" style="width: 100%;">
+            <br><br>
+            No action is required from HR anymore, but of course, they would be notified of an employee's separation via email.
+
+            
+          </p>
+          </p>
+        </div>
+
+      
+
+
+        
+
+
+
+
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+</html>
