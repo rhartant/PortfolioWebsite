@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ryan Hartanto</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="subpage_style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Poppins|Poppins:b|Roboto">
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    
+  </head>
+  
+  <div class="navbar-container">
+    <nav class="navbar navbar-expand-sm navbar-light bg-transparent">
+
+      <a class="navbar-brand" href="index.html">
+        <img src="images/brand_icon.png" width="50" height="25" alt="">
+      </a>
+
+      <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarMenu">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">Work</a>
+          </li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link">About</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <body>
+        <div class="header-container">
+          <h1>
+              UCI Now Events Redesign
+          </h1>
+          <!--
+          <br>
+          <img src="images/duo/duo_help_desk_headerpic.png" style="width: 100%;"></img>
+        </div>-->
+
+
+
+
+        <div class="section-container">
+          <h2>Project Overview 📘</h2>
+          <p>
+            <br>
+                 UCI Now is a mobile app that allows the UCI community to view events and make reservations for study rooms. After analyzing its user experience, I concluded that a redesign would improve its information architecture, consistency, navigation, and scalability. This project was unfortunately unfinished due to prioritizing other projects, so I didn’t get the opportunity to redesign the entire application. However, this case study will demonstrate the effectiveness of its redesign by detailing the redesign of the events page and explaining next steps to bringing a full redesign into fruition.
+          </p>
+        </div>
+
+
+
+        <div class="section-container">
+          <h2>
+            Problem 💢
+          </h2>
+          <p><br>
+                The UCI Now app is functional, but its information architecture is questionable. A home page diverges into other pages. Some of these pages share similar purposes, yet have inconsistent styling. For example, on the home page, there are buttons that lead to Virtual Events, Student Center Events, and Ring Mall Events. Each of those pages are inconsistent, and the individual events within those pages are also inconsistent.          
+            <br><br>
+            <img src="images/sces/ucinow/events_flow.png" style="width: 100%;">
+        
+        </p>
+        </div>
+
+        <div class="section-container">
+            <h2>Solution 💡</h2>
+            <p>
+              <br>
+              Combine similar pages into one for more organization. And have a tabbed redesign for ease of navigation, so that the user doesn’t have to return to the home screen every time they want to view a different page.
+
+            </div>
+  
+
+        
+        <div class="section-container">
+          <h2>
+              Design 💻
+          </h2>
+   
+          <br>
+
+          <p>
+
+
+            The three separate events pages have been consolidated into a single Events page, with the option to filter them by location (Virtual, Student Center, or Ring Mall). It also keeps functionality from the original, allowing the user to search, jump to a date, and sort. Now, there’s also unified styling for every individual event.
+            <br><br>
+            <img src="images/sces/ucinow/events_mockups.png" style="width: 100%;">
+            <br><br>
+            Here’s a demonstration of the new user flow, with the template fields now populated with information:<br><br>
+            <img src="images/sces/ucinow/events_flow_new.png" style="width: 100%;">
+            <br><br>
+
+          </p>
+          </p>
+        </div>
+
+        <div class="section-container">
+            <h2>
+                Next Steps 🤔
+            </h2>
+     
+            <br>
+  
+            <p>
+  
+                The Student Center is always growing and finding new spaces for students to reserve. Recently, they opened a commuter lounge with lockers that can be reserved for the day. Currently, the only way to reserve a locker is on the web. But in the future, it’d be ideal to include this in the UCI Now app, which already allows for study room reservations.
+                <br><br>
+                With the tabbed redesign, adding a new reservation is seamless. Instead of tacking on another button on the original home page every time a new reservation type is needed, it can be consolidated in the reservations page in the new redesign.
+
+                <br><br>
+              <img src="images/sces/ucinow/reserve.png" style="width: 100%;">
+              <br><br>
+              Before beginning development work and pushing this into production, user testing should be conducted to validate the effectiveness of the redesign. These should include moderated A/B testing of the old and new design, which can gather quantitative data on how long it takes to complete certain tasks, and qualitative data on how users feel about changes.
+
+  
+            </p>
+            </p>
+          </div>
+
+      
+
+
+        
+
+
+
+
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+</html>
