@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ryan Hartanto</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="subpage_style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Poppins|Poppins:b|Roboto">
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    
+  </head>
+  
+  <div class="navbar-container">
+    <nav class="navbar navbar-expand-sm navbar-light bg-transparent">
+
+      <a class="navbar-brand" href="index.html">
+        <img src="images/brand_icon.png" width="50" height="25" alt="">
+      </a>
+
+      <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarMenu">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">Work</a>
+          </li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link">About</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <body>
+        <div class="header-container">
+          <h1>
+              Bodyguard
+          </h1>
+
+          <p style="text-align: center;">
+            Enhancing Situational Awareness on Echo Buds
+          </p>
+        </div>
+
+
+
+        <div class="section-container" style="background-color: #f2f2f2;">
+            <p>
+                To protect intellectual property, I have omitted descriptions of the workflow and details about the research and design process.
+  
+            </p>
+          </div>
+
+
+        <div class="section-container">
+          <h2>Overview 📘</h2>
+          <p>
+            <br>
+            One of my key projects as a UX Designer on the Alexa Human Effects (HFX) team was “Bodyguard”,  a feature designed to improve user safety by detecting environmental sounds while using noise-canceling earbuds. This feature was born out of customer research suggesting its usefulness and consumer desire. I synthesized research data to advocate for this feature, designed its user experience, and iterated based on stakeholder feedback.
+          </p>
+        </div>
+
+
+        <div class="section-container">
+          <h2>
+            The Problem 💢
+          </h2>
+          <p><br>
+            When users wear earbuds—especially with active noise cancellation (ANC)—they become less aware of their surroundings, which can pose safety risks. The challenge was to design a feature that could make users situationally aware.
+    
+            
+
+          </p>
+        </div>
+
+        <div class="section-container">
+            <h2>Research 🔍</h2>
+            <p>
+              <br>
+              I synthesized internal research and customer surveys to identify user needs. Key takeaways included:
+            </p><br>
+            <ul>
+                <li>Being warned of danger was a highly desired job to be done from technology for both Alexa and non-Alexa users.</li>
+                <li>There was a strong demand for hearables to detect and notify users of important environmental sounds.</li>
+                
+            </ul>
+
+          </div>
+
+          <div class="section-container">
+            <h2>Defining the Feature 🔉</h2>
+            <p>
+              <br>
+              Based on this research, I narrowed down on designing a feature for Echo Buds that could detect certain sounds - but which sounds? I created a sound priority list based on:
+            </p><br>
+            <ul>
+                <li>Survey data on customer preferences for sound detection.</li>
+                <li>User scenarios where situational awareness would be most beneficial to their safety.</li>
+                <li>Pre-existing sound detection models for other Alexa products that could be leveraged.</li>
+                
+            </ul>
+            <p>
+                A key limitation to chosen sounds was Alexa's inherent processing latency on Echo Buds, which affected real-time sound detection. This meant that some urgent sounds might not be useful for immediate intervention, leading to certain sounds being deprioritized for being less useful in such scenarios.
+            </p>
+
+          </div>
+
+        <div class="section-container">
+        <h2>Design 🛠️</h2>
+        <p><br>
+            After mapping out user workflows and iterating on the user experience based on research and feedback from the team, I created documentation and audio demos demonstrating the user experience of Echo Buds reacting to long-duration sounds and short-duration sounds.<br><br>
+
+            Depending on the state of the Echo Buds at the time of interruption (music, podcast, calls, nothing), I outlined:
+            <br><Br>
+
+            <ul>
+                <li>Whether audio playback should be ducked or paused</li>
+                <li>Whether a sound cue (earcon) or text-to-speech notification was sent.</li>                
+            </ul>
+
+            <p>
+                These specifications adhered to Alexa’s voice interruption design guidelines. 
+            </p>
+
+            <Br>
+      
+        </div>
+
+
+        <div class="section-container">
+          <h2>
+              Next Steps 🤔
+          </h2>
+          <p>
+            <br>
+            The findings and workflow I created were incorporated into the product roadmap, allowing engineers and product managers to refine the feature further. Follow-ups I recommended included:            <br><Br>
+
+            <ul>
+                <li><strong>The development team should optimize sensitivity thresholds</strong> to balance when an interruption was triggered while minimizing false positives.</li>
+                <li><strong>The audio engineering team should design a unique sound cue (earcon)</strong> to help users intuitively recognize Bodyguard alerts.</li>
+                <li><strong>Consider designing beyond safety-related sounds. </strong> The sound list I created prioritized safety. But if we had the opportunity to expand upon the feature, users could find value in detecting other sounds that were not directly related to safety.</li>
+                
+            </ul>
+
+          </p>
+        </div>
+
+
+        
+
+
+
+
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+</html>

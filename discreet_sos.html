@@ -49,6 +49,15 @@
         </div>
 
 
+
+        <div class="section-container" style="background-color: #f2f2f2;">
+            <p>
+                To protect intellectual property, I have omitted descriptions of the workflow and details about the research and design process.
+  
+            </p>
+          </div>
+
+
         <div class="section-container">
           <h2>Overview 📘</h2>
           <p>
@@ -71,15 +80,17 @@
                 <li>Using voice activation (e.g., "Alexa, call 911").</li>
             </ul>
 
-            <br>
-            <strong>Gesture Interaction</strong>
-            I initially recommended a dedicated SOS gesture to ensure clear intent and avoid conflicts with existing gestures used for media controls. However, the development team was unsure of the technical constraints of adding a new gesture to the existing Echo Buds’ line. I adapted and recommended an existing one-handed gesture that balanced ease of use and low accidental activation risk.
+            
+            <p>
+                Both of these methods can be conspicuous and potentially escalate dangerous situations. Echo Buds provide a unique opportunity to introduce a discreet emergency activation method via touch gestures without requiring a phone on-hand.
+            </p>
+            
 
           </p>
         </div>
 
         <div class="section-container">
-            <h2>Research 📘</h2>
+            <h2>Research 🔍</h2>
             <p>
               <br>
               Internal research and customer surveys indicated that gesture-activated emergency calls ranked among the most desired safety features for hearables. Additionally, broader research suggested a growing consumer demand for technology to enhance personal safety.
@@ -87,7 +98,7 @@
           </div>
 
         <div class="section-container">
-        <h2>Design 📘</h2>
+        <h2>Design 🛠️</h2>
         <p><br>
             To design an effective solution, I established key criteria:
             <br><Br>
@@ -99,113 +110,45 @@
                 
             </ol>
 
-            Both of these methods can be conspicuous and potentially escalate dangerous situations. Echo Buds provide a unique opportunity to introduce a discreet emergency activation method via touch gestures without requiring a phone on-hand.
-        </p>
-        </div>
-
-
-        <div class="section-container">
-          <h2>
-              Stakeholder Feedback 📈
-          </h2>
-          <p>
-            <br>
-            I presented my research and project plan to stakeholders at OIT. 
-            After emphasizing the impact Duo has on the Help Desk, and demonstrating how my designs can mitigate that impact, 
-            I received approval to work on redesigning their website.
-            <br><br>
-
-            As I worked on this project, I communicated my progress with the stakeholders, showed my designs to students, 
-            and iterated based on feedback. Some initial designs were intended to make the enrollment page less intimidating by 
-            moving the instructions to a PDF, separate page, or video. However, user testing and stakeholder feedback helped me 
-            realize that step-by-step instructions must be instantly accessible, despite being long. Visibility is prioritized so 
-            that in the event that new users need help with every single step of the enrollment process, the instructions are easy to find.
-            <br><br>
-
-            <img src="images/duo/stakeholder_feedback.png" style="width: 100%;"><br><br>
-
-          </p>
-        </div>
-
-        <div class="section-container">
-          <h2>
-              Design 💻
-          </h2>
-   
-          <p>
-            <br> After presenting my designs and getting approval from stakeholders from OIT, I had the opportunity to 
-            implement my designs directly on their website using WordPress. Now, the current
-            Duo Help Desk webpages are live and accessible to anyone:<br>
-            <ul>
-            <li><a href="https://www.oit.uci.edu/duo/duo-enroll/" target="blank">UC Irvine Office of Information Technology Duo Enrollment Webpage</a></li>
-            <li><a href="https://www.oit.uci.edu/duo/duo-faq/" target="blank">UC Irvine Office of Information Technology Duo FAQ Webpage</a></li>
-            </ul>
-          </p>
-          <Br>
-          <p>
-            <strong>Enroll in Duo Webpage - Enrollment Instructions:</strong><br>
-            The instructions have been restructured so that users are able to easily read each step. 
-            There is now a distinct step-by-step process, instead of just a wall of paragraphs.
-            <br><br>
-          </p>
-
-          <p>
-            <strong>Duo Enrollment Webpage - Added visibility to the Duo Support Desk:</strong><br>
-            The link to the Duo Support Desk has been turned into a button. It is now much more visible and users no longer have trouble finding it.
-
-            <br><br>
-            <img src="images/duo/redesign_duo_enrollment.png" style="width: 100%;">
-            <br><br>
-          
-
-            <strong>Improving the user flow:</strong><br>
-            Instead of directing the user to the Duo Support Desk Home page, they are instead redirected straight to the enrollment process. 
-            This prevents a user from getting lost on the home page, and skips an unnecessary step in the process.
-
-            <br><br>
-            <img src="images/duo/redesign_user_flow.png" style="width: 100%;">
-            <br><br>
-
-            <strong>Adding more visibility to self-troubleshooting:</strong><br>
-            A call to action has been added to the Duo FAQ page, to encourage users to click on the button if they experience an issue. 
-            This makes troubleshooting instructions much easier to find.
-
+            <Br>
+            <p>
+            <strong>Gesture Interaction</strong><br>
+            I initially recommended a dedicated SOS gesture to ensure clear intent and avoid conflicts with existing gestures used for media controls. However, the development team was unsure of the technical constraints of adding a new gesture to the existing Echo Buds’ line. I adapted and recommended an existing one-handed gesture that balanced ease of use and low accidental activation risk.
             
             <br><br>
-            <img src="images/duo/redesign_duo_faq.png" style="width: 100%;">
-          </p>
-          </p>
+            <strong>Technical Constraints for Emergency Calling</strong><br>
+            A major challenge was Alexa’s inability to directly call 911 due to legal and technical restrictions. After diving deep into Amazon’s existing feature set and reaching out to other teams, I found two alternative solutions that ensure that the user’s distress call reaches someone who can help:
+
+            <br>
+            <ol>
+                <li><strong>Alexa Guard Plus:</strong> Connects the user with a trained agent who can dispatch emergency services.</li>
+                <li><strong>Emergency Contact Feature:</strong> Calls a pre-designated emergency contact who can assess the situation and take appropriate action.</li>
+            </ol>
+            </p>
+
+            <p>
+             
+            <strong>User Flow</strong><br>
+            I designed the workflow from when Discreet SOS is activated to when an emergency call is initiated. This workflow prioritized ease of activation while providing voice and gesture-based methods of error prevention in case of false positives.
+            </p>
         </div>
+
 
         <div class="section-container">
           <h2>
-              Final Thoughts 🤔
+              Next Steps 🤔
           </h2>
           <p>
             <br>
-            <strong>Impact:</strong><br>
-            The improvements I have implemented will be seen by tens of thousands of UCI students 
-            and employees who need to enroll in Duo. I made sure that my changes 
-            would make the enrollment process more accessible and intuitive for new users.
-            <br><br>
+            The findings and workflow I created were incorporated into the product roadmap, allowing engineers and product managers to refine the feature further. Follow-ups I recommended included:            <br><Br>
 
-            <strong>Working with constraints:</strong><br>
-            Unfortunately, many of the changes I proposed to OIT were not implemented. 
-            Some of the things that I wanted to change were outside of the scope of the Help Desk. 
-            In addition, some websites that I wanted to improve were run on legacy software, 
-            which meant that OIT was not willing to make tradeoffs 
-            to improve them. As a result, I had to prioritize making improvements to the sites 
-            which were within the project’s scope.
-            <br><br>
+            <ul>
+                <li><strong>The development team should create a unique gesture.</strong> Investigate whether it can be added to the existing Echo Buds line, and plan to implement it on future iterations.</li>
+                <li><strong>Dive deeper into the Alexa’s legal and technical feasibility for direct 911 calling</strong> so that the user can get a more reliable emergency response.</li>
+                <li><strong>Collaborate with researchers </strong> to study user responses under emergency conditions.</li>
+                
+            </ul>
 
-            <strong>Taking the initiative:</strong><br>
-            My official job title at the Help Desk is “Help Desk Consultant”. 
-            My responsibilities are to answer calls and emails for I.T support. 
-            Nowhere in the job description does it say to perform UX case studies, 
-            propose projects, and make changes to their support websites. 
-            I am very proud that I took the initiative to spearhead this project, and am extremely 
-            thankful to my supervisors who were very supportive and approved of the work I did.
-            <br><br>
           </p>
         </div>
 
