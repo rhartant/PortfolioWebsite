@@ -29,6 +29,11 @@ ul{
   color: #303030;
 }
 
+ol{
+  font-size: 18px;
+  color: #303030;
+}
+
 /*delete maybe-----*/
 .sub-page-header {
   font-size: 30px;
@@ -54,11 +59,19 @@ ul{
   padding-bottom: 80px;
 }
 
+.disclaimer_container {
+  padding-left: 15%;
+  padding-right: 15%;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  background-color: #5c5c5c;
+}
+
 .section-container {
   padding-left: 25%;
   padding-right: 25%;
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding-top: 64px;
+  padding-bottom: 64px;
 }
 
 
