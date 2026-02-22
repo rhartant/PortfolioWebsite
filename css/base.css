@@ -21,7 +21,7 @@
     --text-primary: #0a0a0a;     /* Main text color */
     --text-secondary: #525252;   /* Subtler text: captions, body copy */
     --accent: #2d2d2d;           /* Used for the scroll-to-top button */
-    --border: rgba(0, 0, 0, 0.08); /* Subtle dividers and outlines */
+    --border: rgba(0, 0, 0, 0.15); /* Subtle dividers and outlines */
 }
 
 /* Dark mode overrides — applied when <html data-theme="dark"> is set by JS */
@@ -31,7 +31,7 @@
     --text-primary: #f5f5f5;
     --text-secondary: #a0a0a0;
     --accent: #e8e3d3;           /* Warm cream in dark mode */
-    --border: rgba(255, 255, 255, 0.08);
+    --border: rgba(255, 255, 255, 0.15);
 }
 
 
@@ -191,9 +191,6 @@ nav.scrolled {
     transition: transform 0.2s ease;
 }
 
-.theme-toggle:hover {
-    transform: rotate(30deg);
-}
 
 /* ── Footer ────────────────────────────────────────────────
    Sits at the very bottom. Links on the left, copyright right.
@@ -294,7 +291,7 @@ footer {
     align-items: center;
     gap: 0.5rem;
     padding: 0.7rem 1.4rem 0.6rem;
-    border: 1px solid var(--border);
+    border: 1px solid var(--border) !important;
     border-radius: 2px;
     text-decoration: none;
     font-size: 0.88rem;
