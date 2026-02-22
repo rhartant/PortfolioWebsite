@@ -1,3 +1,2 @@
 User-agent: *
-Disallow: /bodyguard.html
-Disallow: /discreet_sos.html
+Disallow: /
