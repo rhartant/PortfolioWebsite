@@ -1,0 +1,330 @@
+/* ============================================================
+   index.css
+   Styles specific to the index/landing page.
+   Linked from index.html alongside base.css:
+     <link rel="stylesheet" href="css/base.css">
+     <link rel="stylesheet" href="css/index.css">
+   ============================================================ */
+
+.index-page *, .index-page *::before, .index-page *::after {
+    transition: color 0.4s ease, border-color 0.4s ease, fill 0.4s ease, stroke 0.4s ease;
+}
+
+/* Add background transitions back for elements where it looks good */
+.index-page nav,
+.index-page .scroll-top,
+.index-page .theme-toggle,
+.index-page .nav-links a,
+.index-page .btn {
+    transition: color 0.4s ease, border-color 0.4s ease, fill 0.4s ease, stroke 0.4s ease, background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease, opacity 0.3s ease;
+}
+
+/* ── Hero Section ──────────────────────────────────────────
+   The large top section with your name and subtitle.
+   The layered radial gradients create the soft blue sky feel.
+   In dark mode this is replaced by a plain dark background
+   with the aurora canvas drawn on top by JS.
+   Shorter than 100vh so the first row of project cards is
+   always visible below the fold, hinting there's more to see.
+   ---------------------------------------------------------- */
+.hero {
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10rem 0 8rem;
+    position: relative;
+    overflow: hidden;
+    background:
+    radial-gradient(ellipse 120% 100% at 50% -10%, #66b9dd 0%, transparent 60%),
+    radial-gradient(ellipse 100% 80% at 30% 40%, #66b9dd 0%, transparent 55%),
+    radial-gradient(ellipse 100% 80% at 75% 50%, #66b9dd 0%, transparent 50%),
+    linear-gradient(to bottom, transparent 0%, transparent 40%, #fafaf9 80%),
+    #66b9dd;
+        transition: none;
+}
+
+[data-theme="dark"] .hero {
+    background: #0a0a0a;
+}
+
+/* Fades the hero into the page background in light mode */
+.hero-fade {
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%; height: 100%; /* full height, not just 50% */
+    background: var(--bg-primary); /* use the variable so it transitions with everything */
+    opacity: 0.0;
+    z-index: 3;
+    pointer-events: none;
+}
+
+[data-theme="dark"] .hero-fade {
+    display: none;
+}
+
+/* Hero text content — sits above the fade overlay */
+.hero-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    z-index: 5;
+    padding: 0 4rem;
+}
+
+/* Your name */
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 8vw, 6.5rem);
+    font-weight: 700;
+    line-height: 0.95;
+    margin-bottom: 2rem;
+    letter-spacing: -0.02em;
+    opacity: 0;
+    animation: slideUp 1s ease-out 0.1s forwards;
+}
+
+/* Subtitle line */
+.hero-subtitle {
+    font-size: clamp(1.25rem, 2vw, 1.35rem);
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-weight: 400;
+    opacity: 0;
+    animation: slideUp 1s ease-out 0.2s forwards;
+}
+
+
+[data-theme="dark"] .hero-subtitle {
+    color: #ffffff9d;
+}
+
+/* Cloud blobs in light mode — purely decorative blurred shapes */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -10%; left: -15%;
+    width: 80%; height: 130%;
+    background:
+        radial-gradient(ellipse at 15% 20%, rgba(250,250,249,0.95) 0%, rgba(250,250,249,0.4) 28%, transparent 58%),
+        radial-gradient(ellipse at 35% 40%, rgba(250,250,249,0.85) 0%, rgba(250,250,249,0.3) 32%, transparent 62%),
+        radial-gradient(ellipse at 20% 65%, rgba(250,250,249,0.9) 0%, rgba(250,250,249,0.35) 30%, transparent 60%);
+    filter: blur(50px);
+    opacity: 0;
+    pointer-events: none;
+    animation: cloudDrift1 35s ease-in-out infinite, cloudFadeIn 1.5s ease-out 0.4s forwards;
+    z-index: 0;
+}
+
+.hero-content::before {
+    content: '';
+    position: absolute;
+    top: 5%; right: -8%;
+    width: 60%; height: 60%;
+    background:
+        radial-gradient(ellipse at 60% 40%, rgba(250,245,235,0.85) 0%, rgba(250,245,235,0.4) 35%, transparent 65%),
+        radial-gradient(ellipse at 80% 60%, rgba(250,243,225,0.7) 0%, rgba(250,243,225,0.3) 30%, transparent 60%);
+    filter: blur(60px);
+    opacity: 0;
+    pointer-events: none;
+    animation: cloudDrift2 45s ease-in-out infinite alternate, cloudFadeIn 1.5s ease-out 0.6s forwards;
+    z-index: 0;
+}
+
+[data-theme="dark"] .hero::before,
+[data-theme="dark"] .hero-content::before {
+    display: none;
+}
+
+@keyframes cloudFadeIn {
+    to { opacity: 0.75; }
+}
+
+@keyframes cloudDrift1 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(-5%, 3%) scale(1.03); }
+    50% { transform: translate(4%, -2%) scale(0.97); }
+    75% { transform: translate(-3%, 4%) scale(1.02); }
+}
+
+@keyframes cloudDrift2 {
+    0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+    50% { transform: translate(-6%, 4%) scale(1.05) rotate(1.5deg); }
+    100% { transform: translate(5%, -3%) scale(0.95) rotate(-1.5deg); }
+}
+
+/* Aurora canvas — dark mode only, drawn by JS */
+#aurora-canvas {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+[data-theme="dark"] #aurora-canvas {
+    display: block;
+}
+
+/* Make sure content sits above the aurora */
+[data-theme="dark"] .hero-content,
+[data-theme="dark"] .projects,
+[data-theme="dark"] footer {
+    position: relative;
+    z-index: 10;
+}
+
+
+/* ── Projects Grid ─────────────────────────────────────────
+   Two-column grid of project cards.
+   The wrapper ensures the background extends full width
+   while the inner section constrains the content width.
+   ---------------------------------------------------------- */
+.projects-wrapper {
+    background: var(--bg-primary);
+    width: 100%;
+}
+
+.projects {
+    padding: 0 4rem 6rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+}
+
+.projects-grid {
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out 0.3s forwards;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+}
+
+/* Individual project card — transparent, no box */
+.project-card {
+    background: transparent;
+    cursor: pointer;
+}
+
+/* The image thumbnail */
+.project-image {
+    width: 100%;
+    aspect-ratio: 4/3;
+    background: var(--bg-secondary);
+    transition: transform 0.25s ease, background 0.25s ease;    border-radius: 8px;
+    overflow: hidden; /* keeps the image within the rounded corner */
+    background: rgb(227, 235, 238);
+    position:relative;
+}
+
+.project-image::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(102, 185, 221, 0.1) 0%, rgba(180, 120, 200, 0.2) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.project-image:hover::before {
+    opacity: 1;
+}
+
+
+/* If you use an actual <img> inside .project-image */
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 1;
+    position:relative;
+}
+
+.project-image img.loaded {
+    opacity: 1;
+}
+
+[data-theme="dark"] .project-image {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Slight tilt on hover — same effect as your old site */
+.project-image:hover {
+    transform: rotate(2deg);
+    background: rgb(207, 226, 238);
+}
+
+
+
+[data-theme="dark"] .project-image:hover {
+    background: rgba(121, 150, 160, 0.171);
+}
+
+/* Title and description below the image */
+.project-info {
+    padding: 1rem 0 0;
+}
+
+.project-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
+    color: var(--text-primary);
+    transition: color 0.4s ease;
+    display: inline-block;
+}
+
+.project-info h3:hover {
+    color: #4288c2;
+}
+
+.project-info p {
+    color: var(--text-secondary);
+    font-size: 1.25rem;
+    line-height: 1.5;
+}
+
+.grain {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    pointer-events: none;
+    opacity: 0.35; /* adjust this to taste — lower = subtler */
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 200px 200px; /* tile size — smaller = finer grain */
+}
+
+
+/* ── Responsive ────────────────────────────────────────────
+   On mobile, stack the project grid to a single column
+   and tighten the padding.
+   ---------------------------------------------------------- */
+@media (max-width: 768px) {
+    .hero {
+        padding: 8rem 0 6rem; /* no horizontal padding here */
+    }
+
+    .hero-content {
+        padding: 0 1.25rem; /* this is the one doing the actual aligning */
+    }
+
+    .projects {
+        padding: 0 1.25rem 3rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr; /* single column on mobile */
+        gap: 4rem;
+    }
+}

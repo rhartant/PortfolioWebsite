@@ -1,70 +1,197 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ryan Hartanto</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet"
-       href="https://fonts.googleapis.com/css?family=Poppins|Poppins:b|Roboto">
-    <link rel="icon" href="images/favicon.png" type="image/png">
-    <link rel="stylesheet" 
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-    
-  </head>
-  
-  <div class="navbar-container" style="margin-bottom:120px;">
-    <nav class="navbar navbar-expand-sm navbar-light bg-transparent">
+    <title>About — Ryan Hartanto</title>
 
-      <a class="navbar-brand" href="index.html">
-        <img src="images/brand_icon.png" width="50" height="25" alt="">
-      </a>
+    <!--
+        ANTI-FLASH SCRIPT
+        Must stay inline here — runs before the page renders to prevent
+        a flash of the wrong background color on load.
+    -->
+    <script>
+        const saved = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', saved);
+        document.documentElement.style.background = saved === 'dark' ? '#0a0a0a' : '#fafaf9';
+    </script>
 
-      <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+    <!-- Shared base styles (nav, footer, colors, reset) -->
+    <link rel="stylesheet" href="css/base.css">
 
-      <div class="collapse navbar-collapse" id="navbarMenu">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a href="index.html" class="nav-link">Work</a>
-          </li>
-          <li class="nav-item">
-            <a href="" class="nav-link">About</a>
-          </li>
+    <style>
+        /* Push footer to the bottom even on short pages */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        footer {
+            margin-top: auto;
+        }
+
+        .about-wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 10rem 4rem 8rem;
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+        }
+
+        .about-photo {
+            opacity: 0;
+            animation: slideUp 0.8s ease-out 0.1s forwards;
+            width: 280px;  
+            max-width: 400px;
+            flex-shrink: 0;
+            border-radius: 3px;
+            display: block;
+
+        }
+
+        .about-content {
+            opacity: 0;
+            animation: slideUp 0.8s ease-out 0.2s forwards;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        /* "Hi, I'm Ryan" greeting */
+        .about-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 200;
+            line-height: 1.1;
+            color: var(--text-primary);
+        }
+
+        .about-content p {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .about-content p:first-of-type {
+          opacity: 0;
+          animation: slideUp 0.8s ease-out 0.3s forwards;
+        }
+
+        .about-content p:last-of-type {
+          opacity: 0;
+          animation: slideUp 0.8s ease-out 0.4s forwards;
+        }
+
+        .about-links {
+            opacity: 0;
+            animation: slideUp 0.8s ease-out 0.5s forwards;
+            display: flex;
+            gap: 1rem;
+            margin-top: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .about-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.7rem 1.4rem 0.6rem;
+            border: 1px solid var(--border);
+            border-radius: 2px;
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            background: transparent;
+            transition: all 0.25s ease;
+            line-height: 1.5;
+        }
+
+        .about-links a:hover {
+            background: var(--text-primary);
+            color: var(--bg-primary);
+            border-color: var(--text-primary);
+        }
+
+        @media (max-width: 768px) {
+            .about-wrapper {
+                flex-direction: column;
+                padding: 8rem 1.25rem 5rem;
+                gap: 2.5rem;
+            }
+
+            .about-photo {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+    <a href="index.html" class="nav-logo">RH</a>
+    <div class="nav-right">
+        <ul class="nav-links">
+            <li><a href="index.html">Work</a></li>
+            <li><a href="about.html" class="active">About</a></li>
         </ul>
-      </div>
+        <!-- Theme toggle: shows sun icon in dark mode, moon in light mode -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <!-- Sun icon (visible when in dark mode) -->
+            <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="5"/>
+                <line x1="12" y1="1" x2="12" y2="3"/>
+                <line x1="12" y1="21" x2="12" y2="23"/>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                <line x1="1" y1="12" x2="3" y2="12"/>
+                <line x1="21" y1="12" x2="23" y2="12"/>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+            </svg>
+            <!-- Moon icon (visible when in light mode) -->
+            <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+        </button>
     </nav>
-  </div>
 
-  <body>
-    <div class="page-container">
-      <div class="about-container">
+    <div class="about-wrapper">
+        <!-- Replace src with your actual photo filename -->
+        <img class="about-photo" src="images/about_me.png" alt="Ryan Hartanto photo">
 
-        <img src="images/about_me.png" class="ryan-image"></img>
+        <div class="about-content">
+            <h1>Hi, I'm Ryan.</h1>
 
-        <div class="about-header">
-          <p>I’m a UX Designer at Epic leading mobile and AI efforts for our clinical apps. Originally a San Diego native, I moved to the Midwest after earning my B.S. in Computer Science from UC Irvine. Previously, I was a designer at Amazon Alexa.</p> 
-          <p>
-            Outside of work, you can usually find me sketching digital illustrations, 
-            playing video games, or experimenting with video content.
-        </p>
+            <p>I'm a UX Designer at Epic, where I drive mobile and AI initiatives for clinical applications. A San Diego native at heart, I moved to the Midwest after earning my B.S. in Computer Science from UC Irvine. Previously, I designed for Amazon Alexa.</p>
 
-          <div style="margin-top:12px">
-            <a href="https://www.linkedin.com/in/ryan-hartanto/" style="border-radius:50px; margin-right: 10px;" class="card-button" target="_blank">LinkedIn</a>
-            <a href="pdfs/Ryan_Hartanto_Resume.pdf" style="border-radius:50px;" class="card-button">Resume</a>
-          </div>
+            <p>Outside of work, you can usually find me sketching digital illustrations, playing video games, or experimenting with video content.</p>
+
+            <div class="about-links">
+                <a href="https://www.linkedin.com/in/ryan-hartanto/" target="_blank">LinkedIn</a>
+                <a href="pdfs/Ryan_Hartanto_Resume.pdf" target="_blank">Resume</a>
+            </div>
         </div>
-      </div>
-
     </div>
 
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/ryan-hartanto/" target="_blank">LinkedIn</a>
+                <a href="mailto:ryhartanto@gmail.com">Email</a>
+            </div>
+            <div class="footer-copyright">© 2026 Ryan Hartanto</div>
+        </div>
+    </footer>
+
+    <button class="scroll-top" id="scrollTop" aria-label="Back to top">
+        <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+    </button>
 
 
-    <script src="script.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-  </body>
+    <script src="js/base.js"></script>
+
+</body>
 </html>

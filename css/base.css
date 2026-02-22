@@ -1,0 +1,361 @@
+/* ── Google Fonts ──────────────────────────────────────────
+   Loads two typefaces from Google's servers:
+   - Playfair Display: used for headings (serif, elegant)
+   - Roboto: used for body text (clean, readable)
+   This must be at the very top of the CSS file to work.
+   ---------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Roboto:wght@400;500;700&display=swap');
+
+
+/* ── Theme Variables ───────────────────────────────────────
+   CSS variables let us define colors once and reuse them
+   everywhere. When the theme switches, only these values
+   change — all elements using them update automatically.
+
+   :root means "apply to the whole page by default".
+   Light mode is the default here.
+   ---------------------------------------------------------- */
+:root {
+    --bg-primary: #fafaf9;       /* Main page background */
+    --bg-secondary: #f0efed;     /* Slightly darker bg, used for cards/notices */
+    --text-primary: #0a0a0a;     /* Main text color */
+    --text-secondary: #525252;   /* Subtler text: captions, body copy */
+    --accent: #2d2d2d;           /* Used for the scroll-to-top button */
+    --border: rgba(0, 0, 0, 0.08); /* Subtle dividers and outlines */
+}
+
+/* Dark mode overrides — applied when <html data-theme="dark"> is set by JS */
+[data-theme="dark"] {
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #1a1a1a;
+    --text-primary: #f5f5f5;
+    --text-secondary: #a0a0a0;
+    --accent: #e8e3d3;           /* Warm cream in dark mode */
+    --border: rgba(255, 255, 255, 0.08);
+}
+
+
+/* ── Reset ─────────────────────────────────────────────────
+   Browsers apply their own default spacing and sizing to
+   elements. This resets that so everything behaves consistently.
+   box-sizing: border-box makes width/height include padding,
+   which is almost always what you want.
+   ---------------------------------------------------------- */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: background 0.4s ease, color 0.4s ease, border-color 0.4s ease, fill 0.4s ease, stroke 0.4s ease;
+}
+
+
+/* ── Body ──────────────────────────────────────────────────
+   Base styles for the whole page.
+   overflow-x: hidden prevents horizontal scrollbars caused
+   by the breakout images on narrow screens.
+   ---------------------------------------------------------- */
+body {
+    font-family: 'Roboto', -apple-system, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Sun icon — visible in dark mode, hidden in light mode (controlled by JS) */
+.sun-icon {
+    width: 22px; height: 22px;
+    fill: none;
+    stroke: var(--text-primary);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* Moon icon — visible in light mode, hidden in dark mode (controlled by JS) */
+.moon-icon {
+    width: 22px; height: 22px;
+    fill: var(--text-primary);
+    stroke: none;
+    display: none; /* JS will toggle this to 'block' when needed */
+}
+
+/* ── Navigation ────────────────────────────────────────────
+   Fixed to the top of the viewport so it stays visible
+   while scrolling. The frosted glass effect (backdrop-filter)
+   lets content show through it subtly as you scroll past.
+   ---------------------------------------------------------- */
+nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    padding: 1rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    box-shadow: none;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+nav.scrolled {
+    background: rgba(250, 250, 249, 0.75);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
+        backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+[data-theme="dark"] nav.scrolled {
+    background: rgba(10, 10, 10, 0.75);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+
+
+.nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+    display: inline-block; /* needed for transform to work on a link */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    line-height: 1;
+}
+
+.nav-logo:hover {
+    opacity: 0.8;
+
+}
+
+/* Groups the links and toggle together on the right */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: calc(2.5rem - 11px);
+}
+
+
+
+/* The list of nav links */
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none; /* Remove default bullet points */
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    position: relative;  /* Needed so the underline ::after can be positioned */
+    transition: color 0.3s ease;
+    padding-bottom: 4px; /* Space for the underline to appear beneath */
+}
+
+/* Animated underline on hover — starts at 0 width, expands to full */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 0;    /* Hidden by default */
+    height: 2px;
+    background: var(--text-primary);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%; /* Slide the underline in on hover */
+    height:2px;
+}
+
+.nav-links a.active::after {
+    width: 100%;
+}
+
+/* Theme toggle button (the sun/moon icon) */
+.theme-toggle {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+    transform: rotate(30deg);
+}
+
+/* ── Footer ────────────────────────────────────────────────
+   Sits at the very bottom. Links on the left, copyright right.
+   ---------------------------------------------------------- */
+footer {
+    padding: 4rem 0 3rem;
+    border-top: 1px solid var(--border);
+    background: var(--bg-primary);
+}
+
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.footer-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.footer-links a:hover {
+    color: var(--text-primary);
+}
+
+
+
+/* ── Scroll to Top Button ──────────────────────────────────
+   Fixed circle in the bottom-right corner. Hidden by default,
+   shown via the .visible class added by JS after scrolling down.
+   ---------------------------------------------------------- */
+.scroll-top {
+    position: fixed;
+    bottom: 2rem; right: 2rem;
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden; /* Both opacity and visibility needed for smooth fade */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    background: #2d2d2d; /* Dark in light mode */
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+
+[data-theme="dark"] .scroll-top {
+    background: #e8e3d3; /* Cream in dark mode */
+}
+
+/* JS adds this class when user scrolls past 400px */
+.scroll-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-top:hover {
+    transform: translateY(-3px); /* Lifts slightly on hover */
+}
+
+/* The arrow icon inside the button */
+.scroll-top svg {
+    width: 18px; height: 18px;
+    stroke: #fafaf9; /* Light arrow on dark button */
+    stroke-width: 2.5;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+[data-theme="dark"] .scroll-top svg {
+    stroke: #0a0a0a; /* Dark arrow on cream button */
+}
+
+/* Generic Button Styles repurposed from About */
+.btn-container {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem; /* Increased slightly for spacing in the box */
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1.4rem 0.6rem;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    background: transparent;
+    transition: all 0.25s ease;
+    line-height: 1.5;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: var(--text-primary);
+    color: var(--bg-primary);
+    border-color: var(--text-primary);
+}
+
+
+/* ── Animations ────────────────────────────────────────────
+   Named keyframe animations referenced by the elements above.
+   'forwards' in the animation property means the element
+   stays in its final state (opacity: 1) after finishing.
+   ---------------------------------------------------------- */
+
+/* Used for header elements — slides up from below while fading in */
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Used for content sections — subtler version of slideUp */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Responsive / Mobile ───────────────────────────────────
+   Overrides for screens narrower than 768px (tablets/phones).
+   These rules only apply when the viewport is small enough.
+   ---------------------------------------------------------- */
+@media (max-width: 768px) {
+    nav {
+        padding: 0.75rem 1.25rem;
+    }
+    .footer-content {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 0 1.25rem;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-links {
+        gap: 1.5rem;
+    }
+
+    .nav-right {
+        gap: calc(1.5rem - 11px);
+    }
+
+    .nav-links {
+        gap: 1.25rem;
+    }
+}

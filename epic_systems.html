@@ -1,77 +1,193 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ryan Hartanto</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
-    <link href="subpage_style.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Poppins|Poppins:b|Roboto">
-    <link rel="icon" href="images/favicon.png" type="image/png">
-    
-  </head>
-  
-  <div class="navbar-container">
-    <nav class="navbar navbar-expand-sm navbar-light bg-transparent">
+    <title>Epic Systems: Clinical Mobile Experience — Ryan Hartanto</title>
 
-      <a class="navbar-brand" href="index.html">
-        <img src="images/brand_icon.png" width="50" height="25" alt="">
-      </a>
+    <script>
+        const saved = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', saved);
+        document.documentElement.style.background = saved === 'dark' ? '#0a0a0a' : '#fafaf9';
+    </script>
 
-      <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      
-      <div class="collapse navbar-collapse" id="navbarMenu">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a href="index.html" class="nav-link">Work</a>
-          </li>
-          <li class="nav-item">
-            <a href="about.html" class="nav-link">About</a>
-          </li>
-        </ul>
-      </div>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/project-page.css">
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="nav-logo">RH</a>
+        <div class="nav-right">
+            <ul class="nav-links">
+                <li><a href="index.html">Work</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="5"/>
+                    <line x1="12" y1="1" x2="12" y2="3"/>
+                    <line x1="12" y1="21" x2="12" y2="23"/>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                    <line x1="1" y1="12" x2="3" y2="12"/>
+                    <line x1="21" y1="12" x2="23" y2="12"/>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                </svg>
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>
+            </button>
+        </div>
     </nav>
-  </div>
 
-  <body>
-        <div class="section-container">
-          <h1>
-              Epic Systems
-          </h1>
+    <header class="page-header">
+        <div class="project-meta">
+            <div class="meta-item">
+                <span class="meta-label">Role</span>
+                <span class="meta-value">UX Designer</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Duration</span>
+                <span class="meta-value">1 Year</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Company</span>
+                <span class="meta-value">Epic Systems</span>
+            </div>
+        </div>
 
-          <p style="text-align: center;">
-            2023 - Present
-          </p>
-          <br>
-          <img src="images/epic_systems/epic_systems_headerpic.png" style="width: 100%;"></img>
+        <h1>Epic Systems: Clinical Mobile Experience</h1>
 
+        <div class="confidentiality-notice">
+    <p>
+        <strong>Confidentiality Notice:</strong> To respect the intellectual property 
+        and non-disclosure agreements of Epic Systems, I have abstracted or omitted 
+        specific details from this case study. Please contact me if you would like to learn more about my work and process.
+    </p>
+    
+    <div class="btn-container">
+        <a href="https://www.linkedin.com/in/ryan-hartanto/" target="_blank" class="btn">
+            LinkedIn
+        </a>
+        <a href="mailto:ryhartanto@gmail.com" class="btn">
+            Email
+        </a>
+    </div>
+</div>
 
-          <p><br><Br>
-            
-            As a UX Designer at Epic Systems, I design for clinician-facing mobile apps (Rover, Haiku, and Canto) on iOS/iPadOS and Android. My work focuses on improving navigation, refining mobile design systems, and enhancing workflows to support medical professionals. I collaborate closely with developers, designers, and clinicians to translate complex healthcare needs into user-friendly interfaces that fit in the palm of your hand.
-            <br><br>
+        <div class="hero-image-block">
+            <img src="images/epic_systems/mobile_unification_hero.png" alt="rover, haiku, and canto app logos">
+        </div>
+    </header>
 
-            If you would like to learn more about my work at Epic, feel free to reach out via <a href="https://www.linkedin.com/in/ryan-hartanto/">LinkedIn</a> or email: ryhartanto@gmail.com.
-            </p>
+    <main class="content-body">
+
+        <div class="section">
+            <h2>Overview</h2>
+            <p>I led the design efforts to align and improve the user experience for Epic’s clinical mobile suite: Rover, Haiku, and Canto. Over the course of a year, I worked to consolidate legacy designs into a more unified framework. By aligning development teams and validating workflows with clinicians, I helped establish a consistent experience across iOS and Android mobile devices.</p>
         </div>
 
         <div class="section-divider"></div>
 
-        
+        <div class="section">
+            <h2>The Problem</h2>
+            <p>As Epic’s mobile apps evolved to serve different clinical roles, their designs became fragmented. Over a decade of independent growth led to an outdated user experience and significant operational overhead:</p>
 
+            <ul class="item-list">
+                <li>
+                    <div class="item-bullet"></div>
+                    <div class="item-content">
+                        <strong>UX Inconsistency:</strong> Variations in how core features were implemented across the suite made the apps feel less intuitive for clinicians.
+                    </div>
+                </li>
+                <li>
+                    <div class="item-bullet"></div>
+                    <div class="item-content">
+                        <strong>Design & Development Debt:</strong> Implementing new features required separate design decisions and UI implementations for each app and platform. This duplication of effort increased design debt and created unnecessary complexity when scaling new clinical tools. 
+                    </div>
+                </li>
+                <li>
+                    <div class="item-bullet"></div>
+                    <div class="item-content">
+                        <strong>Operational Overhead:</strong> Healthcare organizations had to manage disparate training and documentation for similar workflows across different apps and operating systems.
+                    </div>
+                </li>
+            </ul>
+        </div>
 
-        
+        <div class="section-divider"></div>
 
+        <div class="section">
+            <h2>User Research & Validation</h2>
+            <p>I led the research and validation process to ensure the updated designs worked for clinicians and were feasible for our development teams to build:</p>
+            <ul class="item-list">
+                <li>
+                    <div class="item-bullet"></div>
+                    <div class="item-content">
+                        <strong>Clinical Shadowing:</strong> Observed and interviewed nurses and physicians in hospitals and clinics to see how they actually handle mobile devices on the job.
+                    </div>
+                </li>
+                <li>
+                    <div class="item-bullet"></div>
+                    <div class="item-content">
+                        <strong>Usability Testing:</strong> Ran task-based tests at hospitals and clinical conferences to make sure the new navigation was intuitive and efficient.
+                    </div>
+                </li>
+                <li>
+                    <div class="item-bullet"></div>
+                    <div class="item-content">
+                        <strong>Stakeholder Alignment:</strong> Collaborated with Product, Dev, and QA to iterate on designs based on technical constraints and clinical requirements. 
+                    </div>
+                </li>
+            </ul>
+        </div>
 
+        <div class="section-divider"></div>
 
+        <div class="section">
+            <h2>Design & Outcomes</h2>
+            <p>I focused on creating a scalable framework that works across phone and tablet screens while maintaining platform parity between iOS and Android. Key outcomes included:</p>
 
-    <script src="script.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-  </body>
+            <ul class="item-list">
+                <li>
+                    <div class="item-bullet"></div>
+                    <div class="item-content">
+                        <strong>Systemic Consistency:</strong> Standardized where core actions live, ensuring the experience is predictable across the entire mobile suite.
+                    </div>
+                </li>
+                <li>
+                    <div class="item-bullet"></div>
+                    <div class="item-content">
+                        <strong>Systematic Scalability:</strong> Established shared UI patterns. This allows teams to build more consistently without having to "re-invent" the UI for every new tool.
+                    </div>
+                </li>
+                <li>
+                    <div class="item-bullet"></div>
+                    <div class="item-content">
+                        <strong>Simplified Training:</strong> Created a unified UI that makes it easier for organizations to manage internal training materials and support.
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/ryan-hartanto/" target="_blank">LinkedIn</a>
+                <a href="mailto:ryhartanto@gmail.com">Email</a>
+            </div>
+            <div class="footer-copyright">© 2026 Ryan Hartanto</div>
+        </div>
+    </footer>
+
+    <button class="scroll-top" id="scrollTop" aria-label="Back to top">
+        <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+    </button>
+
+    <script src="js/base.js"></script>
+</body>
 </html>

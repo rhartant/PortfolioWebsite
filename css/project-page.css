@@ -1,0 +1,360 @@
+/* ============================================================
+   project-page.css
+   Styles for individual project/case study pages.
+   Linked from your HTML via: <link rel="stylesheet" href="project-page.css">
+   ============================================================ */
+
+
+/* ── Page Header ───────────────────────────────────────────
+   The top section with meta info, title, notice, and buttons.
+   max-width constrains the width; margin: 0 auto centers it.
+   ---------------------------------------------------------- */
+.page-header {
+    padding: 10rem 4rem 5rem; /* Extra top padding clears the fixed nav */
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Role / Duration / Company row */
+.project-meta {
+    display: flex;
+    gap: 3rem;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap; /* Wraps to multiple lines on small screens */
+    opacity: 0;
+    animation: slideUp 0.8s ease-out 0.1s forwards; /* Fades in on load */
+}
+
+/* Each individual meta item (label + value stacked vertically) */
+.meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+/* e.g. "ROLE", "DURATION" */
+.meta-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+/* e.g. "Lead UX Designer", "1 Year" */
+.meta-value {
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+/* Main project title */
+.page-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 6vw, 4.5rem); /* Scales fluidly with viewport width */
+    font-weight: 200;
+    line-height: 1.05;
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: slideUp 0.8s ease-out 0.2s forwards;
+}
+
+/* Gray notice box */
+.confidentiality-notice {
+    background: var(--bg-secondary);
+    padding: 1rem 1.25rem;
+    border-radius: 3px;
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+    opacity: 0;
+    animation: slideUp 0.8s ease-out 0.3s forwards;
+}
+
+/* LinkedIn + Email buttons row */
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap; /* Stays side by side but wraps if screen is very narrow */
+    opacity: 0;
+    animation: slideUp 0.8s ease-out 0.4s forwards;
+}
+
+/* Individual button style */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.65rem 1.4rem;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    color: var(--text-primary);
+    background: transparent;
+    transition: all 0.25s ease;
+}
+
+/* Inverts colors on hover — background fills in, text goes white/dark */
+.btn:hover {
+    background: var(--text-primary);
+    color: var(--bg-primary);
+    border-color: var(--text-primary);
+}
+
+/* Icon inside the button */
+.btn svg {
+    width: 14px; height: 14px;
+    stroke: currentColor; /* Inherits the button's text color */
+    fill: none;
+    stroke-width: 2;
+}
+
+
+/* ── Hero Image Block ──────────────────────────────────────
+   The large image directly below the header.
+   Same max-width as the header so they align.
+   ---------------------------------------------------------- */
+.hero-image-block {
+
+    margin: 0 auto;
+
+    opacity: 0;
+    animation: slideUp 0.8s ease-out 0.5s forwards;
+}
+
+/* Placeholder shown before a real image is added */
+.hero-image-placeholder {
+    width: 100%;
+    aspect-ratio: 16/9; /* Maintains a widescreen rectangle */
+    background: var(--bg-secondary);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+}
+
+/* When you swap in a real <img>, this makes it fill the block cleanly */
+.hero-image-block img {
+    width: 100%;
+    border-radius: 3px;
+    display: block;
+}
+
+
+/* ── Case Study Content Body ───────────────────────────────
+   Narrower than the header/hero (720px vs 900px) for
+   comfortable reading line length. Centered on the page.
+   ---------------------------------------------------------- */
+.content-body {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 4rem 8rem;
+}
+
+/* Each section (Overview, Problem, Goal, etc.) */
+.section {
+    margin-bottom: 4rem;
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out forwards; /* Each section fades in */
+}
+
+/* Staggered animation delays — each section fades in slightly after the previous */
+.section:nth-child(1)  { animation-delay: 0.6s; }
+.section:nth-child(2)  { animation-delay: 0.65s; }
+.section:nth-child(3)  { animation-delay: 0.7s; }
+.section:nth-child(4)  { animation-delay: 0.75s; }
+.section:nth-child(5)  { animation-delay: 0.8s; }
+.section:nth-child(6)  { animation-delay: 0.85s; }
+.section:nth-child(7)  { animation-delay: 0.9s; }
+
+/* Section headings (Overview, The Problem, etc.) */
+.section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.6rem, 3vw, 2.1rem);
+    font-weight: 200;
+    letter-spacing: -0.015em;
+    margin-bottom: 1.25rem;
+    line-height: 1.2;
+    color: var(--text-primary);
+}
+
+.section h3 {
+    font-family: 'Roboto', serif;
+    font-size: clamp(1.6rem, 3vw, 2.1rem);
+    font-weight: 200;
+    letter-spacing: -0.015em;
+    margin-bottom: 1.25rem;
+    line-height: 1.2;
+    color: var(--text-primary);
+}
+
+/* Body paragraphs */
+.section p {
+    color: var(--text-secondary);
+    font-size: 1.125rem; /* 18px */
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.section p:last-child {
+    margin-bottom: 0; /* No extra space after the last paragraph in a section */
+}
+
+/* Custom bullet list — replaces default <ul> bullets */
+.item-list {
+    list-style: none;
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.item-list li {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+/* The small dot before each list item */
+.item-bullet {
+    flex-shrink: 0;          /* Prevents the dot from shrinking */
+    width: 6px; height: 6px;
+    border-radius: 50%;      /* Makes it a circle */
+    background: var(--text-secondary);
+    margin-top: 0.65rem;     /* Aligns dot vertically with the first line of text */
+}
+
+/* The text content of each list item */
+.item-content {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    line-height: 1.75;
+}
+
+/* Bold label at the start of each bullet (e.g. "Navigation Friction:") */
+.item-content strong {
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+/* Horizontal rule between sections */
+.section-divider {
+    height: 1px;
+    background: var(--border);
+    margin-bottom: 4rem;
+}
+
+
+/* ── Breakout Images ───────────────────────────────────────
+   These classes let images "escape" the narrow 720px text
+   column and appear wider. Apply to an <img> tag directly.
+
+   How it works: negative left margin pulls the image leftward,
+   and the increased width fills the gap on the right.
+
+   Usage:
+     <img class="wide-image" src="..." alt="...">
+     <img class="full-image" src="..." alt="...">
+   ---------------------------------------------------------- */
+
+/* Modest breakout — roughly 900px wide */
+.wide-image {
+    width: calc(100% + 180px); /* 90px wider on each side */
+    margin-left: -90px;
+    border-radius: 3px;
+    display: block;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Larger breakout — roughly 1080px wide */
+.full-image {
+    width: calc(100% + 360px); /* 180px wider on each side */
+    margin-left: -180px;
+    border-radius: 3px;
+    display: block;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Placeholder box used in place of real images during development */
+.img-placeholder {
+    background: var(--bg-secondary);
+    aspect-ratio: 16/9;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+}
+
+/* ── Hack at UCI Masonry Grid ────────────────────────────── */
+
+.other-graphics-grid {
+    /* Matches your .wide-image breakout math */
+    width: calc(100% + 180px); 
+    margin-left: -90px;
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 equal columns */
+    gap: 24px;                      /* Space between items */
+    
+    /* CRITICAL: This allows images to keep their original height 
+       instead of stretching to match the taller item in the row */
+    align-items: start; 
+    
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+.other-graphics-grid .grid-image {
+    width: 100%;       /* Fills the column width */
+    height: auto;      /* Keeps original aspect ratio */
+    display: block;
+    border-radius: 3px;
+}
+
+@media (max-width: 1024px) {
+    .other-graphics-grid {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+
+/* ── Responsive / Mobile ───────────────────────────────────
+   Overrides for screens narrower than 768px (tablets/phones).
+   These rules only apply when the viewport is small enough.
+   ---------------------------------------------------------- */
+@media (max-width: 768px) {
+    .page-header {
+        padding: 8rem 1.25rem 3rem;
+    }
+    .content-body {
+        padding: 0 1.25rem 5rem;
+    }
+    .project-meta {
+        gap: 1.5rem;
+    }
+    .wide-image,
+    .full-image {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .other-graphics-grid {
+        grid-template-columns: 1fr; /* Stacks 1, 2, 3... in a single line */
+        gap: 16px;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+}

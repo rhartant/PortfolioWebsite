@@ -1,111 +1,109 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ryan Hartanto</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
-    <link href="subpage_style.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Poppins|Poppins:b|Roboto">
-    <link rel="icon" href="images/favicon.png" type="image/png">
-    
-  </head>
-  
-  <div class="navbar-container">
-    <nav class="navbar navbar-expand-sm navbar-light bg-transparent">
+    <title>Hack at UCI — Ryan Hartanto</title>
 
-      <a class="navbar-brand" href="index.html">
-        <img src="images/brand_icon.png" width="50" height="25" alt="">
-      </a>
+    <script>
+        const saved = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', saved);
+        document.documentElement.style.background = saved === 'dark' ? '#0a0a0a' : '#fafaf9';
+    </script>
 
-      <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      
-      <div class="collapse navbar-collapse" id="navbarMenu">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a href="index.html" class="nav-link">Work</a>
-          </li>
-          <li class="nav-item">
-            <a href="about.html" class="nav-link">About</a>
-          </li>
-        </ul>
-      </div>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/project-page.css">
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="nav-logo">RH</a>
+        <div class="nav-right">
+            <ul class="nav-links">
+                <li><a href="index.html">Work</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                </svg>
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>
+            </button>
+        </div>
     </nav>
-  </div>
 
-  <body>
-
-          <div class="section-container">
-          <h1>Hack at UCI</h1>
-          <p style="text-align:center;">
-            2021-2022
-          </p>
-
-          <br>
-            <p>Hack at UCI is a student-run organization that provides students with a platform to learn and develop technology via workshops, networking events, and hackathons. They host HackUCI, one of Orange County’s largest collegiate hackathons where hundreds of students gather to design and develop technology.
-            </p>
-            <br>
-            <p>As the Design Lead, I guided the design team with visual direction and delegated design work to meet deadlines. I collaborated with the marketing team when creating promotional graphics to drive attendance and engagement. And I worked with the technology team to develop our hackathon event websites.
-            </p>
-
-
-
-                <br>
-                <p>HackUCI 2022 Website</p>
-        
-                    <img src="images/hack_at_uci/hackuci_homepage.png" style="width:100%; box-shadow:  0px 10px 15px #d9d9d9;">
-        
-                
-                <br><br><br>
-
-                <a target="_blank" href="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FlNXQxr3iD8rmEBFztjszL9%2FHackUCI-Figma-Sponsorship-Packet%3Fnode-id%3D2%253A2%26scaling%3Dscale-down%26page-id%3D0%253A1%26starting-point-node-id%3D2%253A2">
-                <p>HackUCI 2022 Sponsorship Prospectus (Figma)</a><br>
-                (This prospectus helped earn HackUCI a $2.25K sponsorship from Figma)</p>
-
-                
-                <div class="figma-iframe">
-                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" 
-                src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FlNXQxr3iD8rmEBFztjszL9%2FHackUCI-Figma-Sponsorship-Packet%3Fnode-id%3D2%253A2%26scaling%3Dscale-down%26page-id%3D0%253A1%26starting-point-node-id%3D2%253A2" 
-                allowfullscreen></iframe>
-                </div>
-
-
-                <br><br>
-                <p>Other Graphics</p>
-                <div class="row">
-                    <div class="column">
-                      <img src="images/hack_at_uci/graphic_fb_event_banner.png" style="width:100%">
-                      <img src="images/hack_at_uci/graphic_resume_reviews.png" style="width:100%">
-                      <img src="images/hack_at_uci/graphic_graphql_workshop.png" style="width:100%">
-                      <img src="images/hack_at_uci/graphic_hack_at_uci_shirt.png" style="width:100%">
-                      <img src="images/hack_at_uci/graphic_hackuci_shirt_logo.png" style="width:100%">
-                    </div>
-            
-                    <div class="column">
-                      <img src="images/hack_at_uci/graphic_zothacks_banner.png" style="width:100%">
-                      <img src="images/hack_at_uci/graphic_info_session.png" style="width:100%">
-                      <img src="images/hack_at_uci/graphic_hacknights.png" style="width:100%">
-                      <img src="images/hack_at_uci/graphic_mentor_application.png" style="width:100%">
-                      <img src="images/hack_at_uci/graphic_zothacks_logo.png" style="width:100%">
-                    </div>
-                </div>
-            
-            
+    <header class="page-header">
+        <div class="project-meta">
+            <div class="meta-item">
+                <span class="meta-label">Role</span>
+                <span class="meta-value">Design Lead</span>
             </div>
+            <div class="meta-item">
+                <span class="meta-label">Duration</span>
+                <span class="meta-value">1 Year</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Organization</span>
+                <span class="meta-value">Hack at UCI</span>
+            </div>
+        </div>
 
+        <h1>Hack at UCI</h1>
 
-  
+        <div class="hero-image-block">
+            <img src="images/hack_at_uci/hack_at_uci_hero.png" alt="Hack at UCI 2022 Branding" class="project-image">
+        </div>
+    </header>
 
+    <main class="content-body">
 
+        <div class="section">
+            <h2>Overview</h2>
+            <p>As the Design Lead for Hack at UCI, I established the visual direction and brand strategy for one of Orange County’s largest collegiate hackathons. I managed a team of designers to produce all digital and physical assets, including event websites and promotional graphics. By maintaining a high standard of visual quality, our design efforts directly contributed to securing a $2.25K sponsorship from Figma.</p>
+        </div>
 
+        <div class="section-divider"></div>
 
-    <script src="script.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-  </body>
+        <div class="section">
+            <p><strong style="color: var(--text-primary);">HackUCI 2022 Website</strong></p>
+            <img class="wide-image" src="images/hack_at_uci/hackuci_homepage.png" alt="Legacy AMS Dashboard">
+
+            <div class="section-divider" style="margin: 60px 0;"></div>
+            
+            <p><strong style="color: var(--text-primary);">Other Graphics</strong></p>
+            
+            <div class="other-graphics-grid">
+                <img class="grid-image" src="images/hack_at_uci/graphic_resume_reviews.png" alt="Graphic 1">
+                <img class="grid-image" src="images/hack_at_uci/graphic_info_session.png" alt="Graphic 2">
+                <img class="grid-image" src="images/hack_at_uci/graphic_graphql_workshop.png" alt="Graphic 3">
+                <img class="grid-image" src="images/hack_at_uci/graphic_hacknights.png" alt="Graphic 4">
+                <img class="grid-image" src="images/hack_at_uci/countdown_graphic_today_rya.png" alt="Graphic 5">
+                <img class="grid-image" src="images/hack_at_uci/graphic_mentor_application.png" alt="Graphic 6">
+                <img class="grid-image" src="images/hack_at_uci/graphic_hackuci_shirt_logo.png" alt="Graphic 7">
+                <img class="grid-image" src="images/hack_at_uci/graphic_zothacks_logo.png" alt="Graphic 8">
+        
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/ryan-hartanto/" target="_blank">LinkedIn</a>
+                <a href="mailto:ryhartanto@gmail.com">Email</a>
+            </div>
+            <div class="footer-copyright">© 2026 Ryan Hartanto</div>
+        </div>
+    </footer>
+
+    <button class="scroll-top" id="scrollTop" aria-label="Back to top">
+        <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+    </button>
+
+    <script src="js/base.js"></script>
+
+</body>
 </html>

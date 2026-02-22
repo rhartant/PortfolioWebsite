@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Alexa Echo Buds — Ryan Hartanto</title>
+
+    <!--
+        ANTI-FLASH SCRIPT
+        This runs before the page renders to set the correct theme immediately.
+        It has to be inline here (not in project-page.js) because external scripts
+        load too late — the page would briefly flash the wrong background color.
+        Do not move this to the JS file.
+    -->
+    <script>
+        const saved = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', saved);
+        document.documentElement.style.background = saved === 'dark' ? '#0a0a0a' : '#fafaf9';
+    </script>
+
+    <!-- External stylesheet — all visual styles live in this file -->
+     <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/project-page.css">
+</head>
+<body>
+
+    <!-- ── Navigation ────────────────────────────────────────
+         Fixed bar at the top of every page.
+         The theme toggle button switches between light/dark mode.
+    ──────────────────────────────────────────────────────── -->
+    <nav>
+    <a href="index.html" class="nav-logo">RH</a>
+    <div class="nav-right">
+        <ul class="nav-links">
+            <li><a href="index.html#work">Work</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+        <!-- Theme toggle: shows sun icon in dark mode, moon in light mode -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <!-- Sun icon (visible when in dark mode) -->
+            <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="5"/>
+                <line x1="12" y1="1" x2="12" y2="3"/>
+                <line x1="12" y1="21" x2="12" y2="23"/>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                <line x1="1" y1="12" x2="3" y2="12"/>
+                <line x1="21" y1="12" x2="23" y2="12"/>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+            </svg>
+            <!-- Moon icon (visible when in light mode) -->
+            <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+        </button>
+    </nav>
+
+
+    <!-- ── Page Header ───────────────────────────────────────
+         Contains: project meta, title, confidentiality notice,
+         and contact buttons. Animates in on page load.
+    ──────────────────────────────────────────────────────── -->
+    <header class="page-header">
+
+        <!-- Role / Duration / Company -->
+        <div class="project-meta">
+            <div class="meta-item">
+                <span class="meta-label">Role</span>
+                <span class="meta-value">UX Designer</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Duration</span>
+                <span class="meta-value">4 Months</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Company</span>
+                <span class="meta-value">Amazon</span>
+            </div>
+        </div>
+
+        <!-- Project title -->
+        <h1>Amazon Alexa Echo Buds</h1>
+
+        <!-- Gray notice box — remove if not needed for other projects -->
+        <div class="confidentiality-notice">
+            <strong>Confidentiality Notice:</strong> To respect the intellectual property
+            and non-disclosure agreements of Amazon, I have abstracted or omitted
+            specific details from this case study. Please contact me if you would like
+            to learn more about my work and process.
+
+            <div class="btn-container">
+        <a href="https://www.linkedin.com/in/ryan-hartanto/" target="_blank" class="btn">
+            LinkedIn
+        </a>
+        <a href="mailto:ryhartanto@gmail.com" class="btn">
+            Email
+        </a>
+    </div>
+        </div>
+
+        <!-- ── Hero Image ────────────────────────────────────────
+         Large image directly below the header.
+         To use a real image, replace the <div class="hero-image-placeholder">
+         with: <img src="your-image-filename.png" alt="Brief description">
+    ──────────────────────────────────────────────────────── -->
+
+        <div class="hero-image-block">
+            <img src="images/amazon/echo_buds.png" alt="Amazon building and Echo Buds 2nd Generation">
+        </div>
+
+
+    </header>
+
+
+
+    <!-- ── Case Study Body ───────────────────────────────────
+         Each section is wrapped in <div class="section">.
+         Sections are separated by <div class="section-divider">.
+
+         For images within sections, use these classes on <img> tags:
+           class="wide-image"  — breaks out slightly wider than the text column
+           class="full-image"  — breaks out significantly wider
+         Example: <img class="wide-image" src="my-image.png" alt="...">
+    ──────────────────────────────────────────────────────── -->
+    <main class="content-body">
+
+        <div class="section">
+            <h2>Overview</h2>
+            <p>As a UX Designer on the Alexa team, I was tasked with identifying features to differentiate the Echo Buds line in a competitive market. I used generative research to move from a broad brief to a specific focus on personal safety. I designed the voice and gesture interactions for two features intended to become core offerings for the product line.</p>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <div class="section">
+            <h2>The Problem</h2>
+            <p>I was tasked with enhancing the value proposition of the Echo Buds line via Alexa’s voice and AI capabilities. The goal was to adapt Alexa’s smart features from the home into a mobile, on-the-go environment. I needed to identify how the assistant could move beyond simple music controls to become a proactive companion that makes the product more essential to a user’s daily routine.</p>
+        </div>
+
+        <div class="section-divider"></div>
+
+
+        <div class="section">
+            <h2>Research</h2>
+            <p>Synthesizing general population surveys revealed a recurring theme: customers wanted technology to help them feel safer while out in the world. I used these insights to define two safety-focused features that utilized Alexa's existing sound detection and emergency response capabilities.</p>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <div class="section">
+            <h2>Design</h2>
+            <p style="color: var(--text-primary);"><strong>Feature A: "Bodyguard"</strong></p>
+            <p>This feature provided situational awareness through sound detection. I created a priority list of sounds based on user preferences and existing Alexa models. A major challenge was managing processing latency on the earbuds; I had to focus on sounds where a slight delay in notification still provided value to the user, rather than sounds requiring immediate, split-second intervention.</p>
+
+            <p style="color: var(--text-primary);"><strong>Feature B: "Discreet SOS"</strong></p>
+            <p>I designed a way to contact help when a phone is out of reach. Because Alexa could not directly dial 911 due to legal constraints, I integrated existing services like Alexa Guard Plus and Emergency Contact Calling to connect users with help.</p>
+
+            <p>The design focused on one-handed accessibility and minimizing false alarms. While I originally proposed a new dedicated gesture, technical limitations on the current hardware led me to adapt the design to a gesture already supported by the earbuds, ensuring the feature could be rolled out to existing customers.</p>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <div class="section">
+            <h2>Outcomes</h2>
+            <ul class="item-list">
+                <li>
+                    <div class="item-bullet"></div>
+                    <div class="item-content">
+                        <strong>Designing in Ambiguity: </strong> I used research to define a product roadmap where one didn't previously exist.
+                    </div>
+                </li>
+                <li>
+                    <div class="item-bullet"></div>
+                    <div class="item-content">
+                        <strong>Navigating Constraints:</strong> The project was defined by hardware latency, legal restrictions on emergency calling, and engineering limitations.
+                    </div>
+                </li>
+                <li>
+                    <div class="item-bullet"></div>
+                    <div class="item-content">
+                        <strong>Screenless Interaction:</strong>  I relied on haptics, voice, and touch gestures to communicate system states, creating an experience that works without a screen.
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </main>
+
+
+    <!-- ── Footer ────────────────────────────────────────────
+         Links on the left, copyright on the right.
+         Stacks vertically on mobile (handled in CSS).
+    ──────────────────────────────────────────────────────── -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/ryan-hartanto/" target="_blank">LinkedIn</a>
+                <!-- Replace with your actual email -->
+                <a href="mailto:ryhartanto@gmail.com">Email</a>
+            </div>
+            <div class="footer-copyright">© 2026 Ryan Hartanto</div>
+        </div>
+    </footer>
+
+
+    <!-- ── Scroll to Top Button ──────────────────────────────
+         Hidden by default, shown by JS after scrolling 400px.
+         Clicking it smoothly scrolls back to the top.
+    ──────────────────────────────────────────────────────── -->
+    <button class="scroll-top" id="scrollTop" aria-label="Back to top">
+        <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+    </button>
+
+
+    <!--
+        External JS file — must be at the bottom of <body>, not in <head>.
+        Placing it here ensures the HTML elements above have already loaded
+        before the script tries to find and interact with them.
+    -->
+    <script src="js/base.js"></script>
+
+</body>
+</html>

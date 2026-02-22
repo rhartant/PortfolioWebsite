@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Navigation Unification - Ryan Hartanto</title>
+
+    <!--
+        ANTI-FLASH SCRIPT
+        This runs before the page renders to set the correct theme immediately.
+        It has to be inline here (not in project-page.js) because external scripts
+        load too late — the page would briefly flash the wrong background color.
+        Do not move this to the JS file.
+    -->
+    <script>
+        const saved = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', saved);
+        document.documentElement.style.background = saved === 'dark' ? '#0a0a0a' : '#fafaf9';
+    </script>
+
+    <!-- External stylesheet — all visual styles live in this file -->
+     <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/project-page.css">
+</head>
+<body>
+
+    <!-- ── Navigation ────────────────────────────────────────
+         Fixed bar at the top of every page.
+         The theme toggle button switches between light/dark mode.
+    ──────────────────────────────────────────────────────── -->
+    <nav>
+    <a href="index.html" class="nav-logo">RH</a>
+    <div class="nav-right">
+        <ul class="nav-links">
+            <li><a href="index.html">Work</a></li>
+            <li><a href="about.html" >About</a></li>
+        </ul>
+        <!-- Theme toggle: shows sun icon in dark mode, moon in light mode -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <!-- Sun icon (visible when in dark mode) -->
+            <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="5"/>
+                <line x1="12" y1="1" x2="12" y2="3"/>
+                <line x1="12" y1="21" x2="12" y2="23"/>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                <line x1="1" y1="12" x2="3" y2="12"/>
+                <line x1="21" y1="12" x2="23" y2="12"/>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+            </svg>
+            <!-- Moon icon (visible when in light mode) -->
+            <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+        </button>
+    </nav>
+
+
+    <!-- ── Page Header ───────────────────────────────────────
+         Contains: project meta, title, confidentiality notice,
+         and contact buttons. Animates in on page load.
+    ──────────────────────────────────────────────────────── -->
+    <header class="page-header">
+
+        <!-- Role / Duration / Company -->
+        <div class="project-meta">
+            <div class="meta-item">
+                <span class="meta-label">Role</span>
+                <span class="meta-value">UX Designer</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Duration</span>
+                <span class="meta-value">1 Year</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Company</span>
+                <span class="meta-value">Epic Systems</span>
+            </div>
+        </div>
+
+        <!-- Project title -->
+        <h1>Mobile Navigation Unification</h1>
+
+        <!-- Gray notice box — remove if not needed for other projects -->
+        <div class="confidentiality-notice">
+            <strong>Confidentiality Notice:</strong> To respect the intellectual property
+            and non-disclosure agreements of Epic Systems, I have abstracted or omitted
+            specific details from this case study. Please contact me if you would like
+            to learn more about my work and process.
+        </div>
+
+        <!-- ── Hero Image ────────────────────────────────────────
+         Large image directly below the header.
+         To use a real image, replace the <div class="hero-image-placeholder">
+         with: <img src="your-image-filename.png" alt="Brief description">
+    ──────────────────────────────────────────────────────── -->
+
+        <div class="hero-image-block">
+        <img src="images/epic_systems/mobile_unification_hero.png" alt="rover, haiku, and canto app logos">
+    </div>
+
+    </header>
+
+
+
+    <!-- ── Case Study Body ───────────────────────────────────
+         Each section is wrapped in <div class="section">.
+         Sections are separated by <div class="section-divider">.
+
+         For images within sections, use these classes on <img> tags:
+           class="wide-image"  — breaks out slightly wider than the text column
+           class="full-image"  — breaks out significantly wider
+         Example: <img class="wide-image" src="my-image.png" alt="...">
+    ──────────────────────────────────────────────────────── -->
+    <main class="content-body">
+
+        <div class="section">
+            <h2>Overview</h2>
+            <p>I led the redesign of the navigation UI for Epic's clinical mobile suite (Rover, Haiku,
+            and Canto). Over the course of a year, I consolidated over a decade's worth of fragmented
+            designs into a single, unified system for iOS and Android. By aligning siloed development
+            teams and validating workflows with clinicians, I established a consistent navigation model
+            that improved efficiency for users and reduced the training burden for healthcare organizations.</p>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <div class="section">
+            <h2>The Problem</h2>
+            <p>Epic's mobile apps evolved independently to serve different clinical roles, such as nurses
+            and physicians. As clinical workflows grew to overlap across these apps, the navigation became
+            fragmented, leading to three core challenges:</p>
+
+            <!-- Custom bullet list — each item has a dot (.item-bullet) and text (.item-content) -->
+            <ul class="item-list">
+                <li>
+                    <div class="item-bullet"></div>
+                    <div class="item-content">
+                        <strong>Navigation Friction:</strong> Inconsistent patterns across the suite made
+                        navigation unintuitive and inefficient, often requiring excessive taps to perform
+                        routine tasks.
+                    </div>
+                </li>
+                <li>
+                    <div class="item-bullet"></div>
+                    <div class="item-content">
+                        <strong>Operational Overhead:</strong> Healthcare organizations faced high maintenance
+                        costs as they had to manage disparate training materials for the same workflows across
+                        different apps and operating systems (iOS and Android).
+                    </div>
+                </li>
+                <li>
+                    <div class="item-bullet"></div>
+                    <div class="item-content">
+                        <strong>Design & Development Debt:</strong> Implementing new features required separate
+                        design decisions and UI implementations for each app. This duplication of effort
+                        increased design debt and created unnecessary complexity when scaling new clinical tools.
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <div class="section">
+            <h2>The Goal</h2>
+            <p>To design a single, scalable navigation system used across all clinical mobile apps to ensure
+            a consistent user experience and a more streamlined development process.</p>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <div class="section">
+            <h2>User Research & Validation</h2>
+            <p>I led the research and alignment process to make sure the new UI worked for clinicians and
+            was actually buildable:</p>
+
+            <!--
+                BREAKOUT IMAGE EXAMPLE — full width breakout
+                Replace the placeholder div with:
+                <img class="full-image" src="your-image.png" alt="Description of image">
+            -->
+            <!--
+            <div class="full-image img-placeholder">[ Full breakout image — 1080px ]</div>
+            -->
+            <ul class="item-list">
+                <li>
+                    <div class="item-bullet"></div>
+                    <div class="item-content">
+                        <strong>Shadowing:</strong> Observed and interviewed nurses and physicians in hospitals
+                        and clinics to see how they actually handle mobile devices on the job.
+                    </div>
+                </li>
+                <li>
+                    <div class="item-bullet"></div>
+                    <div class="item-content">
+                        <strong>Usability Testing:</strong> Ran task-based tests at hospitals, clinics, and
+                        clinical conferences to make sure the new navigation was intuitive and efficient.
+                    </div>
+                </li>
+                <li>
+                    <div class="item-bullet"></div>
+                    <div class="item-content">
+                        <strong>Expert Review:</strong> Worked with internal and external clinicians to make
+                        sure that the design didn't disrupt existing workflows.
+                    </div>
+                </li>
+                <li>
+                    <div class="item-bullet"></div>
+                    <div class="item-content">
+                        <strong>Stakeholder Reviews & Iteration:</strong> Presented designs to Product, Dev,
+                        and QA stakeholders to gather feedback. I iterated on the UI based on their feedback
+                        and technical constraints.
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <div class="section">
+            <h2>Design</h2>
+            <p>I designed a unified navigation system that works across iOS and Android and scales between
+            phone and tablet screens. Some key improvements were:</p>
+
+            <!--
+                BREAKOUT IMAGE EXAMPLE — modest width breakout
+                Replace the placeholder div with:
+                <img class="wide-image" src="your-image.png" alt="Description of image">
+            -->
+            <!--<div class="wide-image img-placeholder">[ Wide image — 900px ]</div>-->
+
+            <ul class="item-list">
+                <li>
+                    <div class="item-bullet"></div>
+                    <div class="item-content">
+                        <strong>Consistent Interactions:</strong> Standardized where core actions live so the
+                        experience is predictable across the entire suite.
+                    </div>
+                </li>
+                <li>
+                    <div class="item-bullet"></div>
+                    <div class="item-content">
+                        <strong>Persistent Patient Identity:</strong> Ensured patient information is always
+                        visible. This allows clinicians to reference patient data at a glance without having
+                        to navigate away from their current workflow.
+                    </div>
+                </li>
+                <li>
+                    <div class="item-bullet"></div>
+                    <div class="item-content">
+                        <strong>Platform Parity:</strong> Aligned Android and iOS patterns so the apps feel
+                        like part of the same family.
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <div class="section">
+            <h2>Outcomes</h2>
+            <ul class="item-list">
+                <li>
+                    <div class="item-bullet"></div>
+                    <div class="item-content">
+                        <strong>Team Alignment:</strong> Navigated multi-team ownership to get formal sign-off,
+                        establishing a shared roadmap for mobile development.
+                    </div>
+                </li>
+                <li>
+                    <div class="item-bullet"></div>
+                    <div class="item-content">
+                        <strong>Scalable System:</strong> Created a standardized framework that serves as the
+                        foundation for new mobile features, so teams don't have to "re-invent" navigation for
+                        every new tool.
+                    </div>
+                </li>
+                <li>
+                    <div class="item-bullet"></div>
+                    <div class="item-content">
+                        <strong>Simpler Training:</strong> Established a consistent UI that makes it easier for
+                        healthcare organizations to consolidate their internal training materials, reducing the
+                        long-term documentation and support burden for their IT departments.
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </main>
+
+
+    <!-- ── Footer ────────────────────────────────────────────
+         Links on the left, copyright on the right.
+         Stacks vertically on mobile (handled in CSS).
+    ──────────────────────────────────────────────────────── -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/ryan-hartanto/" target="_blank">LinkedIn</a>
+                <!-- Replace with your actual email -->
+                <a href="mailto:ryhartanto@gmail.com">Email</a>
+            </div>
+            <div class="footer-copyright">© 2026 Ryan Hartanto</div>
+        </div>
+    </footer>
+
+
+    <!-- ── Scroll to Top Button ──────────────────────────────
+         Hidden by default, shown by JS after scrolling 400px.
+         Clicking it smoothly scrolls back to the top.
+    ──────────────────────────────────────────────────────── -->
+    <button class="scroll-top" id="scrollTop" aria-label="Back to top">
+        <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+    </button>
+
+
+    <!--
+        External JS file — must be at the bottom of <body>, not in <head>.
+        Placing it here ensures the HTML elements above have already loaded
+        before the script tries to find and interact with them.
+    -->
+    <script src="js/base.js"></script>
+
+</body>
+</html>

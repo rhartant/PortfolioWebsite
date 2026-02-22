@@ -1,208 +1,164 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
+<html lang="en" class="index-page">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ryan Hartanto</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Poppins|Poppins:b|Poppins:m|Roboto">
+    <title>Ryan Hartanto — UX Designer</title>
     <link rel="icon" href="images/favicon.png" type="image/png">
 
-  </head>
+    <!--
+        ANTI-FLASH SCRIPT
+        Runs before the page renders to set the correct theme background
+        immediately. Must stay inline — moving it to base.js would cause
+        a visible flash of the wrong color on load.
+    -->
+    <script>
+        const saved = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', saved);
+        document.documentElement.style.background = saved === 'dark' ? '#0a0a0a' : '#A8D5E8';
+    </script>
 
-  <!--If for some reason you chose to inspect this page... I am so sorry for the spaghetti-->
+    <!-- Shared styles: reset, variables, nav, footer, animations -->
+    <link rel="stylesheet" href="css/base.css">
 
-  <div class="navbar-container" style = "margin-bottom: 64px !important;">
-      <nav class="navbar navbar-expand-sm navbar-light bg-transparent">
-
-        <a class="navbar-brand" href="">
-          <img src="images/brand_icon.png" width="50" height="25" alt="">
-        </a>
-
-        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarMenu">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a href="" class="nav-link">Work</a>
-            </li>
-            <li class="nav-item">
-              <a href="about.html" class="nav-link">About</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </div>
-
-
-  <body>
-
-    <div class = "home-header"> 
-      <div class= "home-header-big-text"><strong>Ryan Hartanto</strong></div>
-
-      UX Designer at Epic Systems<br>
-      
-      
-      <div style="margin-top:12px">
-        <a href="https://www.linkedin.com/in/ryan-hartanto/" style="border-radius:50px; margin-right: 10px;" class="card-button" target="_blank">LinkedIn</a>
-        <a href="pdfs/Ryan_Hartanto_Resume.pdf" style="border-radius:50px;" class="card-button">Resume</a>
-      </div>
-    </div>
-
-
-
-    <div class="cards-container">
-
-      <div class="card-container">
-        <a href="epic_systems.html">
-        <img src = "images/index/epic.png" class = "card-image"></img>
-        </a>
-
-        <div class="card-description">
-          <div class="card-title">Epic Systems</div>
-          As a UX Designer at Epic Systems, I designed for clinician-facing mobile apps (Rover, Haiku, and Canto) on iOS/iPadOS and Android.
-          <br><br><a href="epic_systems.html" class="card-button">read more</a>
-        </div>
-      </div>
-
-      <div class="card-container">
-        <a href="amazon.html">
-        <img src = "images/index/amazon.png" class = "card-image"></img>
-        </a>
-
-        <div class="card-description">
-          <div class="card-title">Amazon</div>
-          As a UX Designer at Amazon, I designed voice and gesture interactions for Amazon Echo Buds.
-          <br><br><a href="amazon.html" class="card-button">read more</a>
-        </div>
-      </div>
-
-
-      <div class="card-container">
-        <a href="sces.html">
-        <img src = "images/index/sces.png" class = "card-image"></img>
-        </a>
-
-        <div class="card-description">
-          <div class="card-title">UCI Student Center & Event Services</div>
-          As a UI/UX Designer at UCI Student Center & Event Services, I worked on a variety of projects where I created high-fidelity web and mobile mockups which were handed off for development.
-          <br><br><a href="sces.html" class="card-button">read more</a>
-        </div>
-      </div>
-
-
-      <div class="card-container">
-        <a href="hack_at_uci.html">
-        <img src = "images/index/hack_at_uci.png" class = "card-image"></img>
-        </a>
-
-        <div class="card-description">
-          <div class="card-title">Hack at UCI</div>
-          As the Design Lead of Hack at UCI, I guided the organization's visual content: branding, graphics, and web design.
-          <br><br><a href="hack_at_uci.html" class="card-button">read more</a>
-        </div>
-      </div>
-
-  
-      <div class="card-container">
-        <a href="duo_help_desk.html">
-        <img src = "images/index/duo_help_desk.png" class = "card-image"></img>
-        </a>
-
-        <div class="card-description">
-          <div class="card-title">Duo Support Website Redesign</div>
-          The UCI Help Desk receives an enormous amount of calls and emails asking for help with enrolling in Duo multi-factor authentication. 
-          After recognizing that many of the problems encountered by these users could be solved with better UX, I led a project to redesign their Duo support website. 
-          <br><br><a href="duo_help_desk.html" class="card-button">read more</a>
-        </div>
-      </div>
-
-
-      <div class="card-container">
-        <a href="hatched.html">
-        <img src = "images/index/hatched.png" class = "card-image"></img>
-        </a>
-
-        <div class="card-description">
-          <div class="card-title">Hatched</div>
-          Over 600 teams from the US, Canada, and UK competed to design a tablet application for the Adobe x Amazon Design Creative Jam. Hatched was awarded with an honorable mention and placed in the top 20.            
-          <br><br><a href="hatched.html" class="card-button">read more</a>
-        </div>
-      </div>
-
-    </div>
-
-    <!--<div style = "text-align: center; margin-top: 120px; margin-bottom: 48px;animation: fadeInAnimation 1s; 
-    animation-iteration-count: 1; 
-    animation-fill-mode: forwards; ">- OTHER WORKS -</div>
+    <!-- Index-specific styles: hero, project grid, cards -->
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
     
-    <div class="cards-container">
-
-      <div class="card-container">
-        <img src="images/index/turnout_tracker.png" class="card-image"></img>
-        <div class="card-description">
-          <div class="card-title">Turnout Tracker</div>
-          UX DESIGN / MOBILE APPLICATION<br><br>
-          Turnout Tracker is a mobile application that improves the process of tracking attendance for meetings and events. I was solely responsible for research and design for this project.<br><br>
-          <a href="turnout_tracker.html" class="card-button" style = "background-color: #00988F; border: 2px solid #00988F;">read case study</a>
-        </div>
-      </div>
-
-      <div class="card-container">
-        <img src="images/index/hack_at_uci.png" class="card-image"></img>
-        <div class="card-description">
-          <div class="card-title">Hack at UCI</div>
-          GRAPHIC DESIGN / WEB DESIGN<br><br>
-          As a graphic designer for Hack at UCI, I collaborated with the marketing team, developers, and other designers to strategize visual content for the club.
-          I designed the club website, hackathon event website, and event graphics in order to improve member engagement and online presence.
-
-          <br><br>
-          <a href="hack_at_uci_2020_2021.html" class="card-button" style = "background-color: #3E5AC2; border: 2px solid #3E5AC2;">view work</a>
-        </div>
-      </div>
-
-      <div class="card-container">
-        <img src="images/index/peterportal.png" class="card-image"></img>
-        <div class="card-description">
-          <div class="card-title">PeterPortal</div>
-          UX DESIGN / WEBSITE<br><br>
-          PeterPortal is a website developed by the ICS Student Council Projects Commitee at UCI. Working with other students, I designed the UI/UX and branding of the website with Figma. In addition, I assisted with front-end development in CSS/HTML.<br><br>
-          <a href="peterportal.html" class="card-button" style = "background-color: #2686C7; border: 2px solid #2686C7;">read case study</a>
-        </div>
-      </div>
-
-
-      <div class="card-container">
-        <img src="images/index/vgdc.png" class="card-image"></img>
-        <div class="card-description">
-          <div class="card-title">Video Game Development Club</div>
-          PROGRAMMING / GAME DESIGN<br><br>
-          At the Video Game Development Club at UCI (VGDC), students work in small groups to develop video games. I designed video game UI, main menus, and art assets. In addition, I utilized Unity, C#, and Github to produce these games.<br><br>
-          <a href="https://echonox.itch.io/" class="card-button" target="_blank" style = "background-color: #8BAFF9; border: 2px solid #8BAFF9;">view games</a>
-        </div>
-      </div>
-
-      -->
-
-    </div>
-
-    <div style="padding-top: 200px;"></div>
 
     <!--
-    <div class="footer">
-      This is the footer
-    </div>
+        Aurora canvas — only visible in dark mode.
+        Drawn by index.js.
     -->
+    <canvas id="aurora-canvas"></canvas>
+
+
+    <!-- ── Navigation ──────────────────────────────────────── -->
+    <nav>
+        <a href="index.html" class="nav-logo">RH</a>
+        <div class="nav-right">
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Work</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="5"/>
+                    <line x1="12" y1="1" x2="12" y2="3"/>
+                    <line x1="12" y1="21" x2="12" y2="23"/>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                    <line x1="1" y1="12" x2="3" y2="12"/>
+                    <line x1="21" y1="12" x2="23" y2="12"/>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                </svg>
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+
+    <!-- ── Hero ────────────────────────────────────────────────
+         Shorter than full viewport height so the first row of
+         project cards peeks below the fold on load.
+    ──────────────────────────────────────────────────────── -->
+    <section class="hero">
     
+        <div class="hero-fade"></div>
+        <div class="hero-content">
+            <h1>Ryan Hartanto</h1>
+            <p class="hero-subtitle">
+                UX Designer at Epic Systems, driving mobile and AI initiatives in healthcare.
+            </p>
+        </div>
+    </section>
 
-    <script src="script.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>  
-  </body>
 
+    <!-- ── Projects ────────────────────────────────────────────
+         Two-column grid of project cards.
+         Replace each empty .project-image div with an <img> when ready.
+         Update href="#" placeholders as each project page is built.
+    ──────────────────────────────────────────────────────── -->
+    <div class="projects-wrapper">
+        <section class="projects" id="work">
+            <div class="projects-grid">
+
+                <div class="project-card">
+                    <a href="epic_systems.html">
+                        <div class="project-image">
+                            <img src="images/index/epic_navigation.png" alt="rover, haiku, and canto mobile app logos">
+                        </div>
+                    </a>
+                    <div class="project-info">
+                        <a href="epic_systems.html"><h3>Epic Systems: Clinical Mobile Experience</h3></a>
+                        <p>Improving mobile workflows for clinicians through systemic consistency and platform parity.</p>
+                    </div>
+                </div>
+
+
+                <div class="project-card">
+                    <a href="amazon_alexa_echo_buds.html">
+                        <div class="project-image">
+                            <img src="images/index/amazon.png" alt="amazon alexa echo buds">
+                        </div>
+                    </a>
+                    <div class="project-info">
+                        <a href="amazon_alexa_echo_buds.html"><h3>Amazon Alexa Echo Buds</h3></a>
+                        <p>Identifying and designing on-the-go safety features and multimodal interactions for the Echo Buds line.</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <a href="ams_sces.html">
+                        <div class="project-image">
+                            <img src="images/index/ams_dashboard.png" alt="asset management dashboard viewed from a laptop">
+                        </div>
+                    </a>
+                    <div class="project-info">
+                        <a href="ams_sces.html"><h3>Asset Management Dashboard</h3></a>
+                        <p>Designing a fiscal dashboard for a university finance team to centralize IT inventory and budget health.</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <a href="hack_at_uci.html">
+                        <div class="project-image">
+                            <img src="images/index/hack_at_uci.png" alt="HackUCI landing page viewed from a laptop">
+                        </div>
+                    </a>
+                    <div class="project-info">
+                        <a href="hack_at_uci.html"><h3>Hack at UCI</h3></a>
+                        <p>Leading visual design and branding for one of UCI's largest student organizations.</p>
+                    </div>
+                </div>
+        </section>
+    </div>
+
+
+    <!-- ── Footer ──────────────────────────────────────────── -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/ryan-hartanto/" target="_blank">LinkedIn</a>
+                <a href="mailto:ryhartanto@gmail.com">Email</a>
+            </div>
+            <div class="footer-copyright">© 2026 Ryan Hartanto</div>
+        </div>
+    </footer>
+
+    <button class="scroll-top" id="scrollTop" aria-label="Back to top">
+        <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+    </button>
+
+    <!-- Shared JS: theme toggle, scroll-to-top -->
+    <script src="js/base.js"></script>
+
+    <!-- Index-specific JS: transparent nav on scroll, aurora animation -->
+    <script src="js/index.js"></script>
+
+</body>
 </html>
