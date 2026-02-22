@@ -46,6 +46,7 @@
     padding: 0;
     box-sizing: border-box;
     transition: background 0.4s ease, color 0.4s ease, border-color 0.4s ease, fill 0.4s ease, stroke 0.4s ease;
+    -webkit-tap-highlight-color: transparent;
 }
 
 
@@ -311,6 +312,11 @@ footer {
     border-color: var(--text-primary);
 }
 
+button, a {
+    -webkit-appearance: none;
+    outline: none;
+}
+
 
 /* ── Animations ────────────────────────────────────────────
    Named keyframe animations referenced by the elements above.
@@ -334,6 +340,12 @@ footer {
    Overrides for screens narrower than 768px (tablets/phones).
    These rules only apply when the viewport is small enough.
    ---------------------------------------------------------- */
+@media (hover: hover) {
+    .theme-toggle:hover {
+        transform: rotate(30deg);
+    }
+}
+
 @media (max-width: 768px) {
     nav {
         padding: 0.75rem 1.25rem;
